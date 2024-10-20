@@ -8,7 +8,6 @@ import {
 	Row,
 	type APIApplicationCommandBasicOption,
 	ApplicationCommandOptionType,
-	DmChannel,
 } from "@buape/carbon";
 
 let userId = "";
