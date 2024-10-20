@@ -1,10 +1,9 @@
 import { Client, createHandle } from "@buape/carbon";
 import { createHandler } from "@buape/carbon/adapters/cloudflare";
 
-// import ButtonCommand from "./commands/button.js";
+import UpdateModpackCommand from "./commands/update-modpack.js";
 import PingCommand from "./commands/ping.js";
 import HelpCommand from "./commands/help.js";
-import RemindCommand from "./commands/remind.js";
 
 const handle = createHandle((env) => {
 	const client = new Client(
@@ -17,10 +16,9 @@ const handle = createHandle((env) => {
 			clientSecret: String(env.DISCORD_CLIENT_SECRET),
 		},
 		[
-			// new ButtonCommand(),
+			new UpdateModpackCommand(),
 			new PingCommand(),
 			new HelpCommand(),
-			new RemindCommand(),
 		],
 	);
 	return [client];

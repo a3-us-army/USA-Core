@@ -25,12 +25,12 @@ class HelpEmbed extends Embed {
 			{
 				name: "Useful Commands:",
 				value:
-					'</help:1292673305840713739> - Show this menu \n </ping:1292673305840713740> - Bot replies with "Pong"\n </update-modpack:1292950221495730300> - Remind someone to update their modpack."',
+					'</help:1297560698150322188> - Show this menu \n </ping:1297543586346434671> - Bot replies with "Pong"\n </update-modpack:1297543586346434673> - Remind someone to update their modpack.',
 				inline: false,
 			},
 			{
 				name: "Other Commands:",
-				value: "",
+				value: "Coming Soon!",
 				inline: false,
 			},
 		];
