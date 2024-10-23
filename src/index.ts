@@ -5,6 +5,9 @@ import UpdateModpackCommand from "./commands/update-modpack.js";
 import PingCommand from "./commands/ping.js";
 import HelpCommand from "./commands/help.js";
 
+// =================== Test Stuff ===================================
+//import TestingCommand from "./commands/testing-commands/testing.js";
+
 const handle = createHandle((env) => {
 	const client = new Client(
 		{
@@ -19,6 +22,9 @@ const handle = createHandle((env) => {
 			new UpdateModpackCommand(),
 			new PingCommand(),
 			new HelpCommand(),
+
+			// =================== Test Stuff ===================================
+			//new TestingCommand(),
 		],
 	);
 	return [client];
