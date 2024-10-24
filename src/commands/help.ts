@@ -30,7 +30,8 @@ class HelpEmbed extends Embed {
 			},
 			{
 				name: "Other Commands:",
-				value: "Coming Soon!",
+				value:
+					"</rules:1298803025602936895> - Send the CAG Discord server rules. \n</event-times:1298828407660085279> - The current op times.\n </server-info:1298829078895267871> - All the server info needed to join.\n</socials:1298800865355759739> - The CAG social media accounts.",
 				inline: false,
 			},
 		];

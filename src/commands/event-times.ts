@@ -2,7 +2,7 @@ import { Command, type CommandInteraction } from "@buape/carbon";
 
 export default class EventTimesCommand extends Command {
 	name = "event-times";
-	description = "Send the current event times.";
+	description = "Our op times.";
 
 	async run(interaction: CommandInteraction) {
 		await interaction.reply(

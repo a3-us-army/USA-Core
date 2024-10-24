@@ -2,7 +2,7 @@ import { Command, type CommandInteraction } from "@buape/carbon";
 
 export default class RulesCommand extends Command {
 	name = "rules";
-	description = "Send the CAG rules.";
+	description = "The CAG Discord server rules";
 
 	async run(interaction: CommandInteraction) {
 		await interaction.reply(

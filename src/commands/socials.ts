@@ -2,7 +2,7 @@ import { Command, type CommandInteraction } from "@buape/carbon";
 
 export default class SocialsCommand extends Command {
 	name = "socials";
-	description = "Send the CAG social media accounts.";
+	description = "The CAG social media accounts.";
 
 	async run(interaction: CommandInteraction) {
 		await interaction.reply(

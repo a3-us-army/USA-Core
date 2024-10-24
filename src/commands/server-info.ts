@@ -2,7 +2,7 @@ import { Command, type CommandInteraction } from "@buape/carbon";
 
 export default class ServerInfoCommand extends Command {
 	name = "server-info";
-	description = "Send the server info.";
+	description = "ArmA-3 server info + Other useful information.";
 
 	async run(interaction: CommandInteraction) {
 		await interaction.reply(
