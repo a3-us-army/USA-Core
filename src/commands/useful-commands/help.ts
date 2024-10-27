@@ -1,3 +1,5 @@
+// =================== Imports ===================================
+
 import { Command, type CommandInteraction, Embed } from "@buape/carbon";
 
 const helpTitles = [
@@ -29,9 +31,15 @@ class HelpEmbed extends Embed {
 				inline: false,
 			},
 			{
-				name: "Other Commands:",
+				name: "Tag Commands:",
 				value:
-					"</rules:1298803025602936895> - Send the CAG Discord server rules. \n</event-times:1298828407660085279> - The current op times.\n </server-info:1298829078895267871> - All the server info needed to join.\n</socials:1298800865355759739> - The CAG social media accounts.",
+					"</rules:1298803025602936895> - Send the CAG Discord server rules. \n</event-times:1298828407660085279> - The current op times.\n </server-info:1298829078895267871> - All the server info needed to join.\n</socials:1298800865355759739> - The CAG social media accounts.\n </mos-list:1299904884602048603> - The MOS listings.\n</recruitment-message:1299907655778828308> - The recruitment message.",
+				inline: false,
+			},
+			{
+				name: "Fun Commands:",
+				value:
+					"</nuke:1299925305414385704> - Nuke a place <:nuke:1299927172638707763>",
 				inline: false,
 			},
 		];

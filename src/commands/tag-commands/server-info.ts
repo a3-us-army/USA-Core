@@ -1,3 +1,5 @@
+// =================== Imports ===================================
+
 import { Command, type CommandInteraction } from "@buape/carbon";
 
 export default class ServerInfoCommand extends Command {

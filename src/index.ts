@@ -1,14 +1,26 @@
+// =================== Imports ===================================
+
 import { Client, createHandle } from "@buape/carbon";
 import { createHandler } from "@buape/carbon/adapters/cloudflare";
 
-import UpdateModpackCommand from "./commands/update-modpack.js";
-import PingCommand from "./commands/ping.js";
-import HelpCommand from "./commands/help.js";
-import SocialsCommand from "./commands/socials.js";
-import RulesCommand from "./commands/rules.js";
-import EventTimesCommand from "./commands/event-times.js";
-import ServerInfoCommand from "./commands/server-info.js";
-import MosListCommand from "./commands/mos-list.js";
+// =================== Useful Commands ===================================
+
+import UpdateModpackCommand from "./commands/useful-commands/update-modpack.js";
+import PingCommand from "./commands/useful-commands/ping.js";
+import HelpCommand from "./commands/useful-commands/help.js";
+
+// =================== Tag Commands ===================================
+
+import SocialsCommand from "./commands/tag-commands/socials.js";
+import RulesCommand from "./commands/tag-commands/rules.js";
+import EventTimesCommand from "./commands/tag-commands/event-times.js";
+import ServerInfoCommand from "./commands/tag-commands/server-info.js";
+import MosListCommand from "./commands/tag-commands/mos-list.js";
+import RecruitmentMessageCommand from "./commands/tag-commands/recruitment-message.js";
+
+// =================== Fun Commands ===================================
+
+import NukeCommand from "./commands/fun-commands/nuke.js";
 
 // =================== Test Stuff ===================================
 //import TestingCommand from "./commands/testing-commands/testing.js";
@@ -24,14 +36,24 @@ const handle = createHandle((env) => {
 			clientSecret: String(env.DISCORD_CLIENT_SECRET),
 		},
 		[
+			// =================== Useful Commands ===================================
+
 			new UpdateModpackCommand(),
 			new PingCommand(),
 			new HelpCommand(),
+
+			// =================== Tag Commands ===================================
+
 			new SocialsCommand(),
 			new RulesCommand(),
 			new EventTimesCommand(),
 			new ServerInfoCommand(),
 			new MosListCommand(),
+			new RecruitmentMessageCommand(),
+
+			// =================== Fun Commands ===================================
+
+			new NukeCommand(),
 
 			// =================== Test Stuff ===================================
 			//new TestingCommand(),
