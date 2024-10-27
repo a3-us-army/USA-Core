@@ -8,6 +8,7 @@ import SocialsCommand from "./commands/socials.js";
 import RulesCommand from "./commands/rules.js";
 import EventTimesCommand from "./commands/event-times.js";
 import ServerInfoCommand from "./commands/server-info.js";
+import MosListCommand from "./commands/mos-list.js";
 
 // =================== Test Stuff ===================================
 //import TestingCommand from "./commands/testing-commands/testing.js";
@@ -30,6 +31,7 @@ const handle = createHandle((env) => {
 			new RulesCommand(),
 			new EventTimesCommand(),
 			new ServerInfoCommand(),
+			new MosListCommand(),
 
 			// =================== Test Stuff ===================================
 			//new TestingCommand(),
