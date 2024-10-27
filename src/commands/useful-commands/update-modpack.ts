@@ -50,7 +50,7 @@ export default class UpdateModpackCommand extends Command {
 	async run(interaction: CommandInteraction) {
 		date = interaction.options.getString("date", true);
 		link = interaction.options.getString("link", true);
-		const updateDescription = `Please update your modpack! Click the button below when you have done so.\n\n**New modpack:** ${link}\n\n**Compatibility Date:** ${date}`;
+		const updateDescription = `Please update your modpack! Click the button below when you have done so. <:updatepack:1299929333065973862> \n\n**New modpack:** ${link}\n\n**Compatibility Date:** ${date}`;
 		const updateEmbed = new UpdateEmbed(updateDescription);
 		await interaction.reply({
 			embeds: [updateEmbed],
@@ -67,7 +67,8 @@ class ModpackLinkButton extends LinkButton {
 class UpdatedButton extends Button {
 	customId = "updated";
 	label = "Updated!";
-	style = ButtonStyle.Success;
+	style = ButtonStyle.Secondary;
+	emoji = {name: "updated", id: "1299929730182676550", animated: false}
 	async run(interaction: ButtonInteraction) {
 		if (!interaction.userId) return interaction.reply("You aren't a user");
 		userId = interaction.userId?.toString();

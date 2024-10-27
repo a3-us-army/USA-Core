@@ -20,7 +20,7 @@ const getRandom = (array: string[]) => {
 class HelpEmbed extends Embed {
 	constructor(title: string) {
 		super({});
-		this.description = "The Help Embed!";
+		this.description = "The Help Embed! <:cag:1299934500624797768>";
 		this.title = title;
 		this.color = 0xff0000;
 		this.fields = [

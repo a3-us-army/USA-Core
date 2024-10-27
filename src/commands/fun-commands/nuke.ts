@@ -7,8 +7,6 @@ import {
 	ApplicationCommandOptionType,
 } from "@buape/carbon";
 
-// =================== Varibles ===================================
-
 let userId = "";
 let where = "";
 
