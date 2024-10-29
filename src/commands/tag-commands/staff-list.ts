@@ -2,7 +2,7 @@
 
 import { Command, type CommandInteraction } from "@buape/carbon";
 
-import staff from "../util-stuff/staff.json";
+import staff from "src/storage-files/staff.json";
 
 const staffList = staff.map(s => `${s.ping} - ${s.position} ${s.emoji} - ${s.boardRank}`).join('\n')
 

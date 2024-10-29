@@ -11,9 +11,13 @@ import {
 
 let helpEmbed = null
 
-const usefulCommands = '</help:1297560698150322188> - Show this menu\n</ping:1297543586346434671> - Bot replies with "Pong"\n</update-modpack:1297543586346434673> - Remind someone to update their modpack.'
-const tagCommands = "</rules:1298803025602936895> - Send the CAG Discord server rules. \n</event-times:1298828407660085279> - The current op times.\n </server-info:1298829078895267871> - All the server info needed to join.\n</socials:1298800865355759739> - The CAG social media accounts.\n </mos-list:1299904884602048603> - The MOS listings.\n</recruitment-message:1299907655778828308> - The recruitment message. \n</staff-list:1300227059959988266> - The people who hold the power in CAG"
-const funCommands = "</nuke:1299925305414385704> - Nuke a place <:nuke:1299927172638707763>"
+import usefulCommandsRaw from "src/storage-files/useful-commands.json"
+import tagCommandsRaw from "src/storage-files/tag-commands.json"
+import funCommandsRaw from "src/storage-files/fun-commands.json"
+
+const usefulCommands = usefulCommandsRaw.map(s => `${s.ping} - ${s.description}`).join('\n')
+const tagCommands = tagCommandsRaw.map(s => `${s.ping} - ${s.description}`).join('\n')
+const funCommands = funCommandsRaw.map(s => `${s.ping} - ${s.description}`).join('\n')
 
 class HelpEmbed extends Embed {
 	constructor(description: string, title: string) {
@@ -33,7 +37,9 @@ export default class HelpCommand extends Command {
 	async run(interaction: CommandInteraction) {
 		helpEmbed = new HelpEmbed("**Useful Commands** - Some commands that are pretty useful! \n\n**Tag Commands** - Commands used to easily send premade tags. \n\n**Fun Commands** - Commands purely for fun!", "The Help Embed");
 
-		await interaction.reply({ embeds: [helpEmbed], components: [new Row ([new CagegorySelectMenu])] });
+		const guildId = interaction.guild?.id
+			await interaction.reply({ embeds: [helpEmbed], components: [new Row ([new CagegorySelectMenu])] });
+		
 	}
 }
 
