@@ -3,5 +3,10 @@
         "name": "nuke",
         "ping": " </nuke:1299925305414385704>",
         "description": "Nuke a place <:nuke:1299927172638707763>"
+    },
+    {
+        "name": "rate",
+        "ping": "</rate:1300679274251944027>",
+        "description": "Get a very real and 100% totally accurate rating of something."
     }
 ]

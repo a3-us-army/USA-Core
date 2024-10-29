@@ -22,6 +22,7 @@ import StaffListCommand from "./commands/tag-commands/staff-list.js";
 // =================== Fun Commands ===================================
 
 import NukeCommand from "./commands/fun-commands/nuke.js";
+import RateCommand from "./commands/fun-commands/rate.js";
 
 // =================== Test Stuff ===================================
 import TestingCommand from "./commands/testing-commands/testing.js";
@@ -55,6 +56,7 @@ const handle = createHandle((env) => {
 			// =================== Fun Commands ===================================
 
 			new NukeCommand(),
+			new RateCommand(),
 
 			// =================== Test Stuff ===================================
 
