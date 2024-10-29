@@ -17,13 +17,14 @@ import EventTimesCommand from "./commands/tag-commands/event-times.js";
 import ServerInfoCommand from "./commands/tag-commands/server-info.js";
 import MosListCommand from "./commands/tag-commands/mos-list.js";
 import RecruitmentMessageCommand from "./commands/tag-commands/recruitment-message.js";
+import StaffListCommand from "./commands/tag-commands/staff-list.js";
 
 // =================== Fun Commands ===================================
 
 import NukeCommand from "./commands/fun-commands/nuke.js";
 
 // =================== Test Stuff ===================================
-//import TestingCommand from "./commands/testing-commands/testing.js";
+import TestingCommand from "./commands/testing-commands/testing.js";
 
 const handle = createHandle((env) => {
 	const client = new Client(
@@ -33,7 +34,6 @@ const handle = createHandle((env) => {
 			clientId: String(env.DISCORD_CLIENT_ID),
 			publicKey: String(env.DISCORD_PUBLIC_KEY),
 			token: String(env.DISCORD_BOT_TOKEN),
-			clientSecret: String(env.DISCORD_CLIENT_SECRET),
 		},
 		[
 			// =================== Useful Commands ===================================
@@ -50,13 +50,15 @@ const handle = createHandle((env) => {
 			new ServerInfoCommand(),
 			new MosListCommand(),
 			new RecruitmentMessageCommand(),
+			new StaffListCommand(),
 
 			// =================== Fun Commands ===================================
 
 			new NukeCommand(),
 
 			// =================== Test Stuff ===================================
-			//new TestingCommand(),
+
+			new TestingCommand(),
 		],
 	);
 	return [client];

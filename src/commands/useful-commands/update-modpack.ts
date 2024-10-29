@@ -67,7 +67,7 @@ class ModpackLinkButton extends LinkButton {
 class UpdatedButton extends Button {
 	customId = "updated";
 	label = "Updated!";
-	style = ButtonStyle.Secondary;
+	style = ButtonStyle.Success;
 	emoji = {name: "updated", id: "1299929730182676550", animated: false}
 	async run(interaction: ButtonInteraction) {
 		if (!interaction.userId) return interaction.reply("You aren't a user");

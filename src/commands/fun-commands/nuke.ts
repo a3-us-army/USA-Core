@@ -31,6 +31,6 @@ export default class NukeCommand extends Command {
 		where = interaction.options.getString("where", true);
 
 
-		await interaction.reply({content: `<@${userId}> has nuked ${where}! <:nuke:1299927172638707763> <:nuke:1299927172638707763> <:nuke:1299927172638707763>`});
+		await interaction.reply(`<@${userId}> has nuked ${where}! <:nuke:1299927172638707763> <:nuke:1299927172638707763> <:nuke:1299927172638707763>`);
 	}
 }
