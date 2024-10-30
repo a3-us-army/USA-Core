@@ -20,6 +20,7 @@ This bot was made as a utility bot for [The CAG USSOF ArmA-3 Unit.](https://disc
 - /help - Show the help menu.
 - /ping - Bot replies with "Pong"
 - /update-modpack - Keep track of who has updated their modpack.
+- /info - Information on this bot.
 
 ## Tag Commands:
 - /rules - Send the CAG Discord server rules.
@@ -29,7 +30,6 @@ This bot was made as a utility bot for [The CAG USSOF ArmA-3 Unit.](https://disc
 - /mos-list - The MOS listings.
 - /recruitment-message - The recruitment message. 
 - /staff-list - The people who hold the power in CAG
-- /info - Information on this bot.
 
 ## Fun Commands: 
 
