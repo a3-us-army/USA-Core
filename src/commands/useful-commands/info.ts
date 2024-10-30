@@ -8,8 +8,6 @@ const contributers = contributersRaw
 	.map((c) => `${c.ping} - ${c.position} ${c.emoji}`)
 	.join("\n");
 
-let infoEmbed = null;
-
 class InfoEmbed extends Embed {
 	title = "Bot info:";
 	color = 0x454b1b;
@@ -37,7 +35,7 @@ export default class InfoCommand extends Command {
 	defer = true;
 
 	async run(interaction: CommandInteraction) {
-		infoEmbed = new InfoEmbed();
+		const infoEmbed = new InfoEmbed();
 		await interaction.reply({ embeds: [infoEmbed] });
 	}
 }
