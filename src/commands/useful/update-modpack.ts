@@ -71,8 +71,8 @@ class UpdatedButton extends Button {
 	emoji = {name: "updated", id: "1299929730182676550", animated: false}
 	async run(interaction: ButtonInteraction) {
 		if (!interaction.userId) return interaction.reply("You aren't a user");
-		userId = interaction.userId?.toString();
+		userId = interaction.userId
 
-		await interaction.reply(`<@${userId}> has updated their modpack!`);
+		await interaction.reply(`<@${userId}> has updated their modpack!`)
 	}
 }

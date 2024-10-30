@@ -1,22 +1,22 @@
 [
 	{
 		"name": "help",
-		"ping": "</help:1297560698150322188>",
+		"id": "1297560698150322188",
 		"description": "Show the help menu"
 	},
 	{
 		"name": "ping",
-		"ping": "</ping:1297543586346434671>",
+		"id": "1297543586346434671",
 		"description": "Bot replies with 'Pong'"
 	},
 	{
-		"name": "update modpack",
-		"ping": "</update-modpack:1297543586346434673>",
+		"name": "update-modpack",
+		"id": "1297543586346434673",
 		"description": "Keep track of whoever has updated their modpack."
 	},
 	{
 		"name": "info",
-		"ping": "</info:1300989111171158106>",
+		"id": "1300989111171158106",
 		"description": "Information on this bot."
 	}
 ]

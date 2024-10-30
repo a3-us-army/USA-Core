@@ -2,7 +2,7 @@
 
 import { Command, type CommandInteraction, Embed } from "@buape/carbon";
 
-import contributersRaw from "src/storage-files/bot-contributers.json";
+import contributersRaw from "src/storage-files/contributors.json";
 
 const contributers = contributersRaw
 	.map((c) => `${c.ping} - ${c.position} ${c.emoji}`)

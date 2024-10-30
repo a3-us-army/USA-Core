@@ -1,37 +1,37 @@
 [
     {
-        "name": "rules",
-        "ping": "</rules:1298803025602936895>",
-        "description": "Send the CAG Discord server rules."
-    },
-    {
-        "name": "event times",
-        "ping": "</event-times:1298828407660085279>",
-        "description": "The current op times."
-    },
-    {
-        "name": "server info",
-        "ping": "</server-info:1298829078895267871>",
-        "description": "All the server info needed to join."
-    },
-    {
-        "name": "socials",
-        "ping": "</socials:1298800865355759739>",
-        "description": "The CAG social media accounts."
-    },
-    {
-        "name": "mos list",
-        "ping": "</mos-list:1299904884602048603>",
-        "description": "The MOS listings."
-    },
-    {
-        "name": "recruitment message",
-        "ping": "</recruitment-message:1299907655778828308>",
-        "description": "The recruitment message. "
-    },
-    {
-        "name": "staff list",
-        "ping": "</staff-list:1300227059959988266>",
-        "description": "The people who hold the power in CAG"
-    }
+					"name": "rules",
+					"id": "1298803025602936895",
+					"description": "Send the CAG Discord server rules."
+				},
+				{
+					"name": "event-times",
+					"id": "1298828407660085279",
+					"description": "The current op times."
+				},
+				{
+					"name": "server-info",
+					"id": "1298829078895267871",
+					"description": "All the server info needed to join."
+				},
+				{
+					"name": "socials",
+					"id": "1298800865355759739",
+					"description": "The CAG social media accounts."
+				},
+				{
+					"name": "mos-list",
+					"id": "1299904884602048603",
+					"description": "The MOS listings."
+				},
+				{
+					"name": "recruitment-message",
+					"id": "1299907655778828308",
+					"description": "The recruitment message. "
+				},
+				{
+					"name": "staff-list",
+					"id": "1300227059959988266",
+					"description": "The people who hold the power in CAG"
+				}
 ]

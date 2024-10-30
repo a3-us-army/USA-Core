@@ -27,7 +27,7 @@ export default class NukeCommand extends Command {
 	async run(interaction: CommandInteraction) {
         if (!interaction.userId) return interaction.reply("You aren't a user");
 
-		userId = interaction.userId?.toString();
+		userId = interaction.userId;
 		where = interaction.options.getString("where", true);
 
 

@@ -2,7 +2,6 @@
     {
         "name": "Buzz",
         "userID": "396891399116554240",
-        "ping": "<@396891399116554240>",
         "position": "O-3 Captain",
         "emoji": "<:O3_Captain:1300297042731732994>",
         "boardRank": "**CO Board**"
@@ -10,7 +9,6 @@
     {
         "name": "NVK",
         "userID": "790301500521971743",
-        "ping": "<@790301500521971743>",
         "position": "W-2 Chief Warrent Officer",
         "emoji": "<:W2_Chief_Warrant_Officer_2:1300296890033639494>",
         "boardRank": "**NCO Board**"
@@ -18,7 +16,6 @@
     {
         "name": "Falcon",
         "userID": "588752803602890793",
-        "ping": "<@588752803602890793>",
         "position": "E-6 Staff Sergeant",
         "emoji": "<:E6_Staff_Sergeant:1300296754574393394>",
         "boardRank": "**NCO Board**"
@@ -26,7 +23,6 @@
     {
         "name": "Laz",
         "userID": "891502308804931655",
-        "ping": "<@891502308804931655>",
         "position": "E-4 Corporal",
         "emoji": "<:E4_Corporal:1300296662731853907>",
         "boardRank": "**NCO Board**"
