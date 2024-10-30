@@ -7,7 +7,6 @@ import {
 	ApplicationCommandOptionType,
 } from "@buape/carbon";
 
-let userId = "";
 let thing = "";
 let stat = "";
 
@@ -32,9 +31,6 @@ export default class RateCommand extends Command {
 	];
 
 	async run(interaction: CommandInteraction) {
-        if (!interaction.userId) return interaction.reply("You aren't a user");
-
-		userId = interaction.userId?.toString();
 		thing = interaction.options.getString("thing", true);
         stat = interaction.options.getString("stat", true);
 

@@ -47,8 +47,6 @@ export default class HelpCommand extends Command {
 			"**Useful Commands** - Some commands that are pretty useful! \n\n**Tag Commands** - Commands used to easily send premade tags. \n\n**Fun Commands** - Commands purely for fun!",
 			"The Help Embed"
 		)
-
-		const guildId = interaction.guild?.id
 		await interaction.reply({
 			embeds: [helpEmbed],
 			components: [new Row([new CagegorySelectMenu()])]
