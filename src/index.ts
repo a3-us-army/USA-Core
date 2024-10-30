@@ -8,6 +8,7 @@ import { createHandler } from "@buape/carbon/adapters/cloudflare";
 import UpdateModpackCommand from "./commands/useful-commands/update-modpack.js";
 import PingCommand from "./commands/useful-commands/ping.js";
 import HelpCommand from "./commands/useful-commands/help.js";
+import InfoCommand from "./commands/useful-commands/info.js";
 
 // =================== Tag Commands ===================================
 
@@ -42,6 +43,7 @@ const handle = createHandle((env) => {
 			new UpdateModpackCommand(),
 			new PingCommand(),
 			new HelpCommand(),
+			new InfoCommand(),
 
 			// =================== Tag Commands ===================================
 

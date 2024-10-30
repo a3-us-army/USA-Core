@@ -15,16 +15,24 @@ import usefulCommandsRaw from "src/storage-files/useful-commands.json"
 import tagCommandsRaw from "src/storage-files/tag-commands.json"
 import funCommandsRaw from "src/storage-files/fun-commands.json"
 
-const usefulCommands = usefulCommandsRaw.map(s => `${s.ping} - ${s.description}`).join('\n')
-const tagCommands = tagCommandsRaw.map(s => `${s.ping} - ${s.description}`).join('\n')
-const funCommands = funCommandsRaw.map(s => `${s.ping} - ${s.description}`).join('\n')
+const usefulCommands = usefulCommandsRaw
+	.map((s) => `${s.ping} - ${s.description}`)
+	.join("\n");
+
+const tagCommands = tagCommandsRaw
+	.map((s) => `${s.ping} - ${s.description}`)
+	.join("\n");
+
+const funCommands = funCommandsRaw
+	.map((s) => `${s.ping} - ${s.description}`)
+	.join("\n");
 
 class HelpEmbed extends Embed {
 	constructor(description: string, title: string) {
 		super({});
 		this.description = description;
 		this.title = title
-		this.color = 0xff0000;
+		this.color = 0x454b1b;
 	}
 }
 

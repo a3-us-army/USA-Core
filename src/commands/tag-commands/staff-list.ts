@@ -4,7 +4,9 @@ import { Command, type CommandInteraction } from "@buape/carbon";
 
 import staff from "src/storage-files/staff.json";
 
-const staffList = staff.map(s => `${s.ping} - ${s.position} ${s.emoji} - ${s.boardRank}`).join('\n')
+const staffList = staff
+	.map((s) => `${s.ping} - ${s.position} ${s.emoji} - ${s.boardRank}`)
+	.join("\n");
 
 export default class StaffListCommand extends Command {
 	name = "staff-list";

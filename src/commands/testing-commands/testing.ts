@@ -1,9 +1,6 @@
 // =================== Imports ===================================
 
-import {
-    Command, 
-    type CommandInteraction, 
-} from "@buape/carbon";
+import { Command, type CommandInteraction } from "@buape/carbon";
 
 export default class TestingCommand extends Command {
 	name = "testing";
