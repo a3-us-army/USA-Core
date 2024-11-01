@@ -1,0 +1,42 @@
+[
+	{
+		"name": "rules",
+		"id": "1298803025602936895",
+		"description": "Send the CAG Discord server rules."
+	},
+	{
+		"name": "event-times",
+		"id": "1298828407660085279",
+		"description": "The current op times."
+	},
+	{
+		"name": "server-info",
+		"id": "1298829078895267871",
+		"description": "All the server info needed to join."
+	},
+	{
+		"name": "socials",
+		"id": "1298800865355759739",
+		"description": "The CAG social media accounts."
+	},
+	{
+		"name": "mos-list",
+		"id": "1299904884602048603",
+		"description": "The MOS listings."
+	},
+	{
+		"name": "recruitment-message",
+		"id": "1299907655778828308",
+		"description": "The recruitment message. "
+	},
+	{
+		"name": "staff-list",
+		"id": "1300227059959988266",
+		"description": "List the people who help make this unit what it is."
+	},
+	{
+		"name": "roster",
+		"id": "1301716873552990238",
+		"description": "The current squad rosters."
+	}
+]

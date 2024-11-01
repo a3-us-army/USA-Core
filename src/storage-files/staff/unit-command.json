@@ -9,22 +9,22 @@
     {
         "name": "NVK",
         "userID": "790301500521971743",
-        "position": "W-2 Chief Warrent Officer",
-        "emoji": "<:W2_Chief_Warrant_Officer_2:1300296890033639494>",
+        "position": "W-3 Chief Warrent Officer",
+        "emoji": "<:W3_Chief_Warrant_Officer_3:1301367515623985284>",
         "boardRank": "**NCO Board**"
     },
     {
         "name": "Falcon",
         "userID": "588752803602890793",
-        "position": "E-6 Staff Sergeant",
-        "emoji": "<:E6_Staff_Sergeant:1300296754574393394>",
+        "position": "E-8 Master Sergeant",
+        "emoji": "<:E8_Master_Sergeant:1300296804293672981>",
         "boardRank": "**NCO Board**"
     },
     {
         "name": "Laz",
         "userID": "891502308804931655",
-        "position": "E-4 Corporal",
-        "emoji": "<:E4_Corporal:1300296662731853907>",
+        "position": "E-7 Sergeant First Class",
+        "emoji": "<:E7_Sergeant_First_Class:1300296771674570774>",
         "boardRank": "**NCO Board**"
     }
 ]

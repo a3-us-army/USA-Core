@@ -12,12 +12,12 @@ class InfoEmbed extends Embed {
 	title = ""
 	color = 0x454b1b
 	fields = [
-		{ name: "Bot Owner", value: "<@829909201262084096>", inline: true },
-		{ name: "Contributers", value: contributers, inline: true },
+		{ name: "Bot Owner", value: "<@829909201262084096>", inline: false },
+		{ name: "Contributers", value: contributers, inline: false },
 		{
 			name: "Source Code",
-			value: "[Click Here](https://github.com/Xanderxx46/cag-faq)",
-			inline: true
+			value: "[Click Here](https://github.com/Xanderxx46/CAG-Operating-System)",
+			inline: false
 		},
 		{
 			name: "About CAG Operating System",

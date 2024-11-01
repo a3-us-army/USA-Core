@@ -1,0 +1,72 @@
+[
+	{
+		"name": "Falcon",
+		"userID": "588752803602890793",
+		"rank": "MSG",
+		"emoji": "<:E8_Master_Sergeant:1300296804293672981>",
+		"number": "1"
+	},
+	{
+		"name": "Laz",
+		"userID": "891502308804931655",
+		"rank": "SFC",
+		"emoji": "<:E7_Sergeant_First_Class:1300296771674570774>",
+		"number": "2"
+	},
+	{
+		"name": "Xander",
+		"userID": "829909201262084096",
+		"rank": "SGT",
+		"emoji": "<:E5_Sergeant:1300296723108986922>",
+		"number": "3"
+	},
+	{
+		"name": "Hawk",
+		"userID": "331650637676675082",
+		"rank": "CPL",
+		"emoji": "<:E4_Corporal:1300296662731853907>",
+		"number": "4"
+	},
+	{
+		"name": "Phillips",
+		"userID": "530494767319089206",
+		"rank": "SPC",
+		"emoji": "<:E4_Specialist:1300296691844517930>",
+		"number": "5"
+	},
+	{
+		"name": "Aeon",
+		"userID": "1235231010640236547",
+		"rank": "PFC",
+		"emoji": "<:E3_Private_First_Class:1300296524152049694>",
+		"number": "6"
+	},
+	{
+		"name": "James",
+		"userID": "749796665258541166",
+		"rank": "PFC",
+		"emoji": "<:E3_Private_First_Class:1300296524152049694>",
+		"number": "7"
+	},
+	{
+		"name": "Void",
+		"userID": "1173063973206249522",
+		"rank": "PFC",
+		"emoji": "<:E3_Private_First_Class:1300296524152049694>",
+		"number": "8"
+	},
+	{
+		"name": "Luci",
+		"userID": "1242249121616629791",
+		"rank": "PFC",
+		"emoji": "<:E3_Private_First_Class:1300296524152049694>",
+		"number": "9"
+	},
+	{
+		"name": "Gunny",
+		"userID": "444687049597911050",
+		"rank": "PVT",
+		"emoji": "<:E2_Private:1300296489053982821>",
+		"number": "10"
+	}
+]

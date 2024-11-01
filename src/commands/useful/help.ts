@@ -11,9 +11,9 @@ import {
 
 let helpEmbed = null
 
-import usefulCommandsRaw from "src/storage-files/useful-commands.json"
-import tagCommandsRaw from "src/storage-files/tag-commands.json"
-import funCommandsRaw from "src/storage-files/fun-commands.json"
+import usefulCommandsRaw from "src/storage-files/commands/useful-commands.json"
+import tagCommandsRaw from "src/storage-files/commands/tag-commands.json"
+import funCommandsRaw from "src/storage-files/commands/fun-commands.json"
 
 const usefulCommands = usefulCommandsRaw
 	.map((s) => `</${s.name}:${s.id}> - ${s.description}`)
@@ -40,7 +40,7 @@ export default class HelpCommand extends Command {
 	name = "help"
 	description = "Show the help menu"
 	defer = true
-	components = [CagegorySelectMenu]
+	components = [CategorySelectMenu]
 
 	async run(interaction: CommandInteraction) {
 		helpEmbed = new HelpEmbed(
@@ -49,12 +49,12 @@ export default class HelpCommand extends Command {
 		)
 		await interaction.reply({
 			embeds: [helpEmbed],
-			components: [new Row([new CagegorySelectMenu()])]
+			components: [new Row([new CategorySelectMenu()])]
 		})
 	}
 }
 
-class CagegorySelectMenu extends StringSelectMenu {
+class CategorySelectMenu extends StringSelectMenu {
 	customId = "category"
 	placeholder = "Select the cagegory of commands"
 	options = [

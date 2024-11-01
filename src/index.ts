@@ -19,6 +19,7 @@ import ServerInfoCommand from "./commands/tag/server-info.js";
 import MosListCommand from "./commands/tag/mos-list.js";
 import RecruitmentMessageCommand from "./commands/tag/recruitment-message.js";
 import StaffListCommand from "./commands/tag/staff-list.js";
+import RosterCommand from "./commands/tag/roster.js"
 
 // =================== Fun Commands ===================================
 
@@ -35,7 +36,7 @@ const handle = createHandle((env) => {
 			deploySecret: String(env.DEPLOY_SECRET),
 			clientId: String(env.DISCORD_CLIENT_ID),
 			publicKey: String(env.DISCORD_PUBLIC_KEY),
-			token: String(env.DISCORD_BOT_TOKEN),
+			token: String(env.DISCORD_BOT_TOKEN)
 		},
 		[
 			// =================== Useful Commands ===================================
@@ -54,6 +55,7 @@ const handle = createHandle((env) => {
 			new MosListCommand(),
 			new RecruitmentMessageCommand(),
 			new StaffListCommand(),
+			new RosterCommand(),
 
 			// =================== Fun Commands ===================================
 
@@ -62,9 +64,9 @@ const handle = createHandle((env) => {
 
 			// =================== Test Stuff ===================================
 
-			new TestingCommand(),
-		],
-	);
+			new TestingCommand()
+		]
+	)
 	return [client];
 });
 

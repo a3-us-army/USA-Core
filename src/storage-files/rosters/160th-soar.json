@@ -1,0 +1,30 @@
+[
+	{
+		"name": "NVK",
+		"userID": "790301500521971743",
+		"rank": "CW3",
+		"emoji": "<:W3_Chief_Warrant_Officer_3:1301367515623985284>",
+		"callSign": "Sky-Wing"
+	},
+	{
+		"name": "Ramrod",
+		"userID": "1098303126253088888",
+		"rank": "CPL",
+		"emoji": "<:E4_Corporal:1300296662731853907>",
+		"callSign": "{AWAITING}"
+	},
+	{
+		"name": "Fletcher",
+		"userID": "1145376173954707517",
+		"rank": "PFC",
+		"emoji": "<:E3_Private_First_Class:1300296524152049694>",
+		"callSign": "{AWAITING}"
+	},
+	{
+		"name": "Spear",
+		"userID": "1238851845930356748",
+		"rank": "PVT",
+		"emoji": "<:E2_Private:1300296489053982821>",
+		"callSign": "{AWAITING}"
+	}
+]
