@@ -1,17 +1,32 @@
 [
 	{
-		"name": "Xander",
-		"userID": "829909201262084096",
-		"position": "**Machine Gunner Lead**"
+		"name": "Buzz",
+		"userID": "396891399116554240",
+		"position": "Unit Lead"
+	},
+	{
+		"name": "NVK",
+		"userID": "790301500521971743",
+		"position": "160th SOAR Detachment Lead and Pilot Lead"
+	},
+	{
+		"name": "Falcon",
+		"userID": "588752803602890793",
+		"position": "Grenadier Lead"
 	},
 	{
 		"name": "Laz",
 		"userID": "891502308804931655",
-		"position": "**Medic Lead**"
+		"position": "Combat Medic Lead"
+	},
+	{
+		"name": "Xander",
+		"userID": "829909201262084096",
+		"position": "Machine Gunner Lead"
 	},
 	{
 		"name": "Ramrod",
 		"userID": "1098303126253088888",
-		"position": "**{REDACTED}**"
+		"position": "JTAC Lead"
 	}
 ]

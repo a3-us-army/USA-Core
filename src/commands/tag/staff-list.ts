@@ -25,7 +25,7 @@ const prTeamList = prTeam
 	.join("\n")
 
 const mosTeamLeadList = mosTeamLeads
-	.map((s) => `<@${s.userID}> - ${s.position}`)
+	.map((s) => `<@${s.userID}> - **${s.position}**`)
 	.join("\n")
 
 let mainEmbed = null
@@ -43,7 +43,7 @@ class StaffListEmbed extends Embed {
 export default class StaffListCommand extends Command {
 	name = "staff-list"
 	description = "List the people who help make this unit what it is."
-	components = [RefreshPrTeamButton, CategorySelectMenu]
+	components = [RefreshStaffTeamButton, CategorySelectMenu]
 	defer = true
 
 	async run(interaction: CommandInteraction) {
@@ -56,7 +56,17 @@ export default class StaffListCommand extends Command {
 			)
 			await interaction.reply({
 				embeds: [mainEmbed],
-				components: [new Row([new RefreshPrTeamButton()])]
+				components: [new Row([new RefreshStaffTeamButton()])]
+			})
+		} else if (channelId === "1301669785960054864") {
+			mainEmbed = new StaffListEmbed(
+				"MOS Team Leads",
+				mosTeamLeadList,
+				"https://i.imgur.com/sceCyzd.png"
+			)
+			await interaction.reply({
+				embeds: [mainEmbed],
+				components: [new Row([new RefreshStaffTeamButton()])]
 			})
 		} else {
 			mainEmbed = new StaffListEmbed(
@@ -126,20 +136,33 @@ class CategorySelectMenu extends StringSelectMenu {
 	}
 }
 
-class RefreshPrTeamButton extends Button {
-	customId = "refreshPRTeam"
+class RefreshStaffTeamButton extends Button {
+	customId = "refreshStaffTeam"
 	label = "Refresh Message"
 	style = ButtonStyle.Secondary
 	emoji = { name: "updated", id: "1299929730182676550", animated: false }
 	async run(interaction: ButtonInteraction) {
-		mainEmbed = new StaffListEmbed(
-			"PR Team",
-			prTeamList,
-			"https://i.imgur.com/RMciiVL.png"
-		)
-		await interaction.update({
-			embeds: [mainEmbed],
-			components: [new Row([new RefreshPrTeamButton()])]
-		})
+		const channelId = interaction.channel?.id
+		if (channelId === "1300140360139280394") {
+			mainEmbed = new StaffListEmbed(
+				"PR Team",
+				prTeamList,
+				"https://i.imgur.com/RMciiVL.png"
+			)
+			await interaction.update({
+				embeds: [mainEmbed],
+				components: [new Row([new RefreshStaffTeamButton()])]
+			})
+		} else if (channelId === "1301669785960054864") {
+			mainEmbed = new StaffListEmbed(
+				"MOS Team Leads",
+				mosTeamLeadList,
+				"https://i.imgur.com/sceCyzd.png"
+			)
+			await interaction.update({
+				embeds: [mainEmbed],
+				components: [new Row([new RefreshStaffTeamButton()])]
+			})
+		}
 	}
 }
