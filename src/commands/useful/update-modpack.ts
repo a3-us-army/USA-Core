@@ -12,7 +12,6 @@ import {
 	ApplicationCommandOptionType,
 	Embed
 } from "@buape/carbon"
-import { GuildStickerManager } from "discord.js"
 
 let userId = ""
 let date = ""
