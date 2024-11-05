@@ -21,6 +21,7 @@ This bot was made as a utility bot for [The CAG USSOF ArmA-3 Unit.](https://disc
 - /ping - Bot replies with "Pong"
 - /update-modpack - Keep track of who has updated their modpack.
 - /info - Information on this bot.
+- /link list - List all of the shortened links.
 
 ## Tag Commands:
 - /rules - Send the CAG Discord server rules.
