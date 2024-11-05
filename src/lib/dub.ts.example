@@ -1,0 +1,5 @@
+import { Dub } from "dub";
+
+export const dub = new Dub({
+  token: "{DUB.CO_API_TOKEN}"
+});
