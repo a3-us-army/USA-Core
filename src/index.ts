@@ -9,6 +9,7 @@ import UpdateModpackCommand from "./commands/useful/update-modpack.js";
 import PingCommand from "./commands/useful/ping.js";
 import HelpCommand from "./commands/useful/help.js";
 import InfoCommand from "./commands/useful/info.js";
+import LinkCommand from "./commands/useful/link.js";
 
 // =================== Tag Commands ===================================
 
@@ -27,7 +28,9 @@ import NukeCommand from "./commands/fun/nuke.js";
 import RateCommand from "./commands/fun/rate.js";
 
 // =================== Test Stuff ===================================
+
 import TestingCommand from "./commands/testing/testing.js";
+
 
 const handle = createHandle((env) => {
 	const client = new Client(
@@ -45,6 +48,7 @@ const handle = createHandle((env) => {
 			new PingCommand(),
 			new HelpCommand(),
 			new InfoCommand(),
+			new LinkCommand(),
 
 			// =================== Tag Commands ===================================
 
@@ -64,7 +68,7 @@ const handle = createHandle((env) => {
 
 			// =================== Test Stuff ===================================
 
-			new TestingCommand()
+			new TestingCommand(),
 		]
 	)
 	return [client];
