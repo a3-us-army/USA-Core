@@ -89,4 +89,3 @@ class CategorySelectMenu extends StringSelectMenu {
 		}
 	}
 }
-

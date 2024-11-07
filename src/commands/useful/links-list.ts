@@ -5,16 +5,19 @@ import { dub } from "src/lib/dub.js"
 let mainEmbed: Embed
 
 class MainEmbed extends Embed {
-	constructor(title: string, description: string) {
+	constructor(title: string, description: string, footerText: string) {
 		super({})
 		this.description = description
 		this.title = title
 		this.color = 0x454b1b
+		this.footer = {
+			text: footerText
+		}
 	}
 }
 
 export default class ListLinksCommand extends Command {
-	name = "list"
+	name = "list-links"
 	description = "List all short links"
 	defer = true
 
@@ -36,18 +39,22 @@ export default class ListLinksCommand extends Command {
 						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 						url: any
 						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-						externalID: any
+						externalId: any
 						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 						id: any
 					}) => `**Short Link:** https://${t.domain}/${t.key}
             **Target:** ${t.url}
-            **ID:** ${t.externalID} | ${t.id}`
+            **Ext ID:** \`${t.externalId}\`
+			**Int ID:** \`${t.id}\``
 				)
 				.join("\n\n")
 
+			const count = await dub.links.count()
+
 			mainEmbed = new MainEmbed(
 				"Links List",
-				linkListTestingServer.slice(0, 2000)
+				linkListTestingServer.slice(0, 2000),
+				`${count} Links`
 			)
 
 			await interaction.reply({ embeds: [mainEmbed] })
@@ -70,7 +77,13 @@ export default class ListLinksCommand extends Command {
 				)
 				.join("\n\n")
 
-			mainEmbed = new MainEmbed("Links List", linkList.slice(0, 2000))
+			const count = await dub.links.count()
+
+			mainEmbed = new MainEmbed(
+				"Links List",
+				linkList.slice(0, 2000),
+				`${count} Links`
+			)
 
 			await interaction.reply({ embeds: [mainEmbed] })
 		}

@@ -20,8 +20,8 @@
 		"description": "Information on this bot."
 	},
 	{
-		"name": "link list",
-		"id": "1303203274698260491",
+		"name": "list-links",
+		"id": "1304196095806537733",
 		"description": "List all of the shortened links."
 	}
 ]
