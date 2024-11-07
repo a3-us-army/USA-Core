@@ -1,36 +1,36 @@
 // =================== Imports ===================================
 
-import { Client, createHandle } from "@buape/carbon";
-import { createHandler } from "@buape/carbon/adapters/cloudflare";
+import { Client, createHandle } from "@buape/carbon"
+import { createHandler } from "@buape/carbon/adapters/cloudflare"
 
 // =================== Useful Commands ===================================
 
-import UpdateModpackCommand from "./commands/useful/update-modpack.js";
-import PingCommand from "./commands/useful/ping.js";
-import HelpCommand from "./commands/useful/help.js";
-import InfoCommand from "./commands/useful/info.js";
-import LinkCommand from "./commands/useful/link.js";
+import UpdateModpackCommand from "./commands/useful/update-modpack.js"
+import PingCommand from "./commands/useful/ping.js"
+import HelpCommand from "./commands/useful/help.js"
+import InfoCommand from "./commands/useful/info.js"
+import LinkAdminCommand from "./commands/useful/link-admin.js"
+import ListLinksCommand from "./commands/useful/links-list.js"
 
 // =================== Tag Commands ===================================
 
-import SocialsCommand from "./commands/tag/socials.js";
-import RulesCommand from "./commands/tag/rules.js";
-import EventTimesCommand from "./commands/tag/event-times.js";
-import ServerInfoCommand from "./commands/tag/server-info.js";
-import MosListCommand from "./commands/tag/mos-list.js";
-import RecruitmentMessageCommand from "./commands/tag/recruitment-message.js";
-import StaffListCommand from "./commands/tag/staff-list.js";
+import SocialsCommand from "./commands/tag/socials.js"
+import RulesCommand from "./commands/tag/rules.js"
+import EventTimesCommand from "./commands/tag/event-times.js"
+import ServerInfoCommand from "./commands/tag/server-info.js"
+import MosListCommand from "./commands/tag/mos-list.js"
+import RecruitmentMessageCommand from "./commands/tag/recruitment-message.js"
+import StaffListCommand from "./commands/tag/staff-list.js"
 import RosterCommand from "./commands/tag/roster.js"
 
 // =================== Fun Commands ===================================
 
-import NukeCommand from "./commands/fun/nuke.js";
-import RateCommand from "./commands/fun/rate.js";
+import NukeCommand from "./commands/fun/nuke.js"
+import RateCommand from "./commands/fun/rate.js"
 
 // =================== Test Stuff ===================================
 
-import TestingCommand from "./commands/testing/testing.js";
-
+import TestingCommand from "./commands/testing/testing.js"
 
 const handle = createHandle((env) => {
 	const client = new Client(
@@ -48,7 +48,8 @@ const handle = createHandle((env) => {
 			new PingCommand(),
 			new HelpCommand(),
 			new InfoCommand(),
-			new LinkCommand(),
+			new LinkAdminCommand(),
+			new ListLinksCommand(),
 
 			// =================== Tag Commands ===================================
 
@@ -68,11 +69,11 @@ const handle = createHandle((env) => {
 
 			// =================== Test Stuff ===================================
 
-			new TestingCommand(),
+			new TestingCommand()
 		]
 	)
-	return [client];
-});
+	return [client]
+})
 
-const handler = createHandler(handle);
-export default { fetch: handler };
+const handler = createHandler(handle)
+export default { fetch: handler }
