@@ -53,7 +53,7 @@ export default class ListLinksCommand extends Command {
 
 			mainEmbed = new MainEmbed(
 				"Links List",
-				linkListTestingServer.slice(0, 2000),
+				linkListTestingServer,
 				`${count} Links`
 			)
 
