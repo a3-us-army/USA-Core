@@ -63,10 +63,6 @@ export default class ListLinksCommand extends Command {
 				.map(
 					(t: {
 						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-						id: any
-						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-						externalID: any
-						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 						domain: any
 						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 						key: any

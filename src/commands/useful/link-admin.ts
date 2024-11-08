@@ -61,13 +61,21 @@ class CreateLinkCommand extends Command {
 	async run(interaction: CommandInteraction) {
 		await interaction.guild?.fetch()
 
-		const guildId = interaction.guild?.id
+		const userId = interaction.user?.id
 
 		const url = interaction.options.getString("url", true)
 		const key = interaction.options.getString("key", true)
 		const ext = interaction.options.getString("ext-id", true)
 
-		if (guildId === "993993868712349716") {
+		errorEmbed = new ErrorEmbed(
+			"You do not have permission to use this.",
+			`You are not an authorized user to use this command. Please talk to <@829909201262084096> or <@3968913991165542400>`
+		)
+
+		if (
+			userId === "829909201262084096" ||
+			userId === "396891399116554240"
+		) {
 			const { shortLink } = await dub.links.create({
 				url: url,
 				key: key,
@@ -77,11 +85,6 @@ class CreateLinkCommand extends Command {
 			mainEmbed = new MainEmbed(
 				"New Link",
 				`**You have created:** ${shortLink}\n\n**Which leads to:** ${url}\n\n**External ID:** ${ext}`
-			)
-
-			errorEmbed = new ErrorEmbed(
-				"You can not use this in this guild.",
-				`You can not use this command in guild ${guildId}`
 			)
 
 			await interaction.reply({ embeds: [mainEmbed] })
@@ -106,7 +109,7 @@ class UpdateLinkCommand extends Command {
 		{
 			name: "id",
 			type: ApplicationCommandOptionType.String,
-			description: "**NOTE*:** Use EXTERNAL ID, defined in /links list",
+			description: "**NOTE*:** Use EXTERNAL ID, defined in /list-links",
 			required: true
 		},
 		{
@@ -118,13 +121,21 @@ class UpdateLinkCommand extends Command {
 	]
 
 	async run(interaction: CommandInteraction) {
-		const guildId = interaction.guild?.id
+		const userId = interaction.user?.id
 
 		const id = interaction.options.getString("id", true)
 		const newUrl = interaction.options.getString("url", true)
 		const newKey = interaction.options.getString("key", false)
 
-		if (guildId === "993993868712349716") {
+		errorEmbed = new ErrorEmbed(
+			"You do not have permission to use this.",
+			`You are not an authorized user to use this command. Please talk to <@829909201262084096> or <@3968913991165542400>`
+		)
+
+		if (
+			userId === "829909201262084096" ||
+			userId === "396891399116554240"
+		) {
 			const newLink = await dub.links.update(`ext_${id}`, {
 				url: newUrl,
 				key: newKey
@@ -140,11 +151,6 @@ class UpdateLinkCommand extends Command {
 			mainEmbed = new MainEmbed(
 				"Updated Link",
 				`**Short Link** https://${domain}/${key}\n\n**New URL:** ${url}\n\n**ID:** ${id}`
-			)
-
-			errorEmbed = new ErrorEmbed(
-				"You can not use this in this guild.",
-				`You can not use this command in guild ${guildId}`
 			)
 
 			await interaction.reply({ embeds: [mainEmbed] })
