@@ -25,7 +25,7 @@ const prTeamList = prTeam
 	.join("\n")
 
 const mosTeamLeadList = mosTeamLeads
-	.map((s) => `<@${s.userID}> - **${s.position}**`)
+	.map((s) => `<@${s.userID}> - **${s.position} Lead**`)
 	.join("\n")
 
 let mainEmbed = null
