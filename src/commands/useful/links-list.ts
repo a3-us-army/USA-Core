@@ -72,8 +72,9 @@ export default class ListLinksCommand extends Command {
 						key: any
 						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 						url: any
-					}) => `**Short Link:** https://${t.domain}/${t.key}
-            **Target:** ${t.url}`
+					}) =>
+						`**Short Link:** https://${t.domain}/${t.key}
+						**Target:** ${t.url}`
 				)
 				.join("\n\n")
 
