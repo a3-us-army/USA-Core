@@ -2,3 +2,4 @@ node_modules/
 .wrangler/
 .dev.vars
 src/lib/dub.ts
+src/lib/short-io.ts
