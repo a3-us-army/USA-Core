@@ -1,6 +1,10 @@
-import { Command, type CommandInteraction, Embed } from "@buape/carbon"
+// =================== Imports ===================================
 
-import { dub } from "src/lib/dub.js"
+import { Command, Embed, type CommandInteraction } from "@buape/carbon"
+
+import { shortio } from "src/lib/short-io.js"
+
+const domainId = 1224713
 
 let mainEmbed: Embed
 
@@ -18,71 +22,29 @@ class MainEmbed extends Embed {
 
 export default class ListLinksCommand extends Command {
 	name = "list-links"
-	description = "List all short links"
+	description = "List all of the shortened links."
 	defer = true
 
 	async run(interaction: CommandInteraction) {
-		const guildId = interaction.guild?.id
-
-		const result = await dub.links.list()
+		const result = await shortio.link.list(domainId)
 		const jsonString = JSON.stringify(result)
 		const jsonObject = JSON.parse(jsonString)
 
-		if (guildId === "993993868712349716") {
-			const linkListTestingServer = jsonObject.result
-				.map(
-					(t: {
-						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-						domain: any
-						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-						key: any
-						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-						url: any
-						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-						externalId: any
-						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-						id: any
-					}) => `**Short Link:** https://${t.domain}/${t.key}
-            **Target:** ${t.url}
-            **Ext ID:** \`${t.externalId}\`
-			**Int ID:** \`${t.id}\``
-				)
-				.join("\n\n")
-
-			const count = await dub.links.count()
-
-			mainEmbed = new MainEmbed(
-				"Links List",
-				linkListTestingServer,
-				`${count} Links`
+		const linkList = jsonObject.links
+			.map(
+				(t: {
+					idString: any
+					shortURL: any
+					originalURL: any
+				}) =>
+					`**Short Link:** ${t.shortURL}\n**Target:** ${t.originalURL}\n**ID:** \`${t.idString}\``
 			)
+			.join("\n\n")
 
-			await interaction.reply({ embeds: [mainEmbed] })
-		} else {
-			const linkList = jsonObject.result
-				.map(
-					(t: {
-						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-						domain: any
-						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-						key: any
-						// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-						url: any
-					}) =>
-						`**Short Link:** https://${t.domain}/${t.key}
-						**Target:** ${t.url}`
-				)
-				.join("\n\n")
+		const count = jsonObject.count
 
-			const count = await dub.links.count()
+		mainEmbed = new MainEmbed("Links List", linkList, `${count} Link(s)`)
 
-			mainEmbed = new MainEmbed(
-				"Links List",
-				linkList.slice(0, 2000),
-				`${count} Links`
-			)
-
-			await interaction.reply({ embeds: [mainEmbed] })
-		}
+		await interaction.reply({ embeds: [mainEmbed] })
 	}
 }

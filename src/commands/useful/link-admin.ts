@@ -7,7 +7,9 @@ import {
 	Embed
 } from "@buape/carbon"
 
-import { dub } from "src/lib/dub.js"
+import { shortio } from "src/lib/short-io.js"
+
+const domain = "go.cag-ussof.org"
 
 let mainEmbed: Embed
 
@@ -44,28 +46,21 @@ class CreateLinkCommand extends Command {
 			required: true
 		},
 		{
-			name: "key",
+			name: "path",
 			type: ApplicationCommandOptionType.String,
 			description:
 				"What slug should it be? (https://go.cag-ussof.org/{KEY})",
-			required: true
-		},
-		{
-			name: "ext-id",
-			type: ApplicationCommandOptionType.String,
-			description: "Unique id to identify each link.",
 			required: true
 		}
 	]
 
 	async run(interaction: CommandInteraction) {
-		await interaction.guild?.fetch()
+		const guildId = interaction.guild?.id
 
 		const userId = interaction.user?.id
 
 		const url = interaction.options.getString("url", true)
-		const key = interaction.options.getString("key", true)
-		const ext = interaction.options.getString("ext-id", true)
+		const path = interaction.options.getString("path", true)
 
 		errorEmbed = new ErrorEmbed(
 			"You do not have permission to use this.",
@@ -76,15 +71,74 @@ class CreateLinkCommand extends Command {
 			userId === "829909201262084096" ||
 			userId === "396891399116554240"
 		) {
-			const { shortLink } = await dub.links.create({
-				url: url,
-				key: key,
-				externalId: ext
-			})
+			if (guildId === "993993868712349716") {
+				const link = await shortio.link.create(domain, url, {
+					path: path
+				})
+
+				const jsonString = JSON.stringify(link)
+				const jsonObject = JSON.parse(jsonString)
+
+				mainEmbed = new MainEmbed(
+					"New Link",
+					`**You have created:** ${jsonObject.shortURL}\n\n**Which leads to:** ${url}\n\n**ID:** \`${jsonObject.idString}\``
+				)
+
+				await interaction.reply({ embeds: [mainEmbed] })
+			} else {
+				const link = await shortio.link.create(domain, url, {
+					path: path
+				})
+
+				const jsonString = JSON.stringify(link)
+				const jsonObject = JSON.parse(jsonString)
+
+				mainEmbed = new MainEmbed(
+					"New Link",
+					`**You have created:** ${jsonObject.shortURL}\n\n**Which leads to:** ${url}`
+				)
+
+				await interaction.reply({ embeds: [mainEmbed] })
+			}
+		} else {
+			await interaction.reply({ embeds: [errorEmbed] })
+		}
+	}
+}
+
+class DeleteinkCommand extends Command {
+	name = "delete"
+	description = "Delete a short link"
+	defer = true
+
+	options: CommandOptions = [
+		{
+			name: "id",
+			type: ApplicationCommandOptionType.String,
+			description: "ID found in /list-links",
+			required: true
+		}
+	]
+
+	async run(interaction: CommandInteraction) {
+		const userId = interaction.user?.id
+
+		const id = interaction.options.getString("id", true)
+
+		errorEmbed = new ErrorEmbed(
+			"You do not have permission to use this.",
+			`You are not an authorized user to use this command. Please talk to <@829909201262084096> or <@3968913991165542400>`
+		)
+
+		if (
+			userId === "829909201262084096" ||
+			userId === "396891399116554240"
+		) {
+			await shortio.link.delete(id)
 
 			mainEmbed = new MainEmbed(
-				"New Link",
-				`**You have created:** ${shortLink}\n\n**Which leads to:** ${url}\n\n**External ID:** ${ext}`
+				"Deleted Link",
+				`You have deleted link with id: \`${id}\``
 			)
 
 			await interaction.reply({ embeds: [mainEmbed] })
@@ -109,11 +163,11 @@ class UpdateLinkCommand extends Command {
 		{
 			name: "id",
 			type: ApplicationCommandOptionType.String,
-			description: "**NOTE*:** Use EXTERNAL ID, defined in /list-links",
+			description: "Defined in /list-links",
 			required: true
 		},
 		{
-			name: "key",
+			name: "path",
 			type: ApplicationCommandOptionType.String,
 			description: "What should the new slug be? (Optional)",
 			required: false
@@ -122,38 +176,51 @@ class UpdateLinkCommand extends Command {
 
 	async run(interaction: CommandInteraction) {
 		const userId = interaction.user?.id
+		const guildId = interaction.guild?.id
 
 		const id = interaction.options.getString("id", true)
 		const newUrl = interaction.options.getString("url", true)
-		const newKey = interaction.options.getString("key", false)
+		const newPath = interaction.options.getString("key", false)
 
 		errorEmbed = new ErrorEmbed(
 			"You do not have permission to use this.",
 			`You are not an authorized user to use this command. Please talk to <@829909201262084096> or <@3968913991165542400>`
 		)
-
 		if (
 			userId === "829909201262084096" ||
 			userId === "396891399116554240"
 		) {
-			const newLink = await dub.links.update(`ext_${id}`, {
-				url: newUrl,
-				key: newKey
-			})
+			if (guildId === "993993868712349716") {
+				const newLink = await shortio.link.update(id, {
+					path: newPath,
+					originalURL: newUrl
+				})
 
-			const jsonString = JSON.stringify(newLink)
-			const jsonObject = JSON.parse(jsonString)
+				const jsonString = JSON.stringify(newLink)
+				const jsonObject = JSON.parse(jsonString)
 
-			const url = jsonObject.url
-			const key = jsonObject.key
-			const domain = jsonObject.domain
+				mainEmbed = new MainEmbed(
+					"Updated Link",
+					`**New Link** ${jsonObject.shortURL}\n\n**Which leads to:** ${jsonObject.originalURL}\n\n**ID:** \`${jsonObject.idString}\``
+				)
 
-			mainEmbed = new MainEmbed(
-				"Updated Link",
-				`**Short Link** https://${domain}/${key}\n\n**New URL:** ${url}\n\n**ID:** ${id}`
-			)
+				await interaction.reply({ embeds: [mainEmbed] })
+			} else {
+				const newLink = await shortio.link.update(id, {
+					path: newPath,
+					originalURL: newUrl
+				})
 
-			await interaction.reply({ embeds: [mainEmbed] })
+				const jsonString = JSON.stringify(newLink)
+				const jsonObject = JSON.parse(jsonString)
+
+				mainEmbed = new MainEmbed(
+					"Updated Link",
+					`**New Link** ${jsonObject.shortURL}\n\n**Which leads to:** ${jsonObject.originalURL}`
+				)
+
+				await interaction.reply({ embeds: [mainEmbed] })
+			}
 		} else {
 			await interaction.reply({ embeds: [errorEmbed] })
 		}
@@ -165,5 +232,9 @@ export default class LinkAdminCommand extends CommandWithSubcommands {
 	description = "Do many things with dub.co Link!"
 	defer = true
 
-	subcommands = [new CreateLinkCommand(), new UpdateLinkCommand()]
+	subcommands = [
+		new CreateLinkCommand(),
+		new UpdateLinkCommand(),
+		new DeleteinkCommand()
+	]
 }

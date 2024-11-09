@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "@buape/carbon": "^0.0.0-beta-20241027215537",
+        "@short.io/client-node": "^1.1.0",
         "dub": "^0.44.0"
     },
     "devDependencies": {

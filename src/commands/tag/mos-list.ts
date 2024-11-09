@@ -1,14 +1,14 @@
 // =================== Imports ===================================
 
-import { Command, type CommandInteraction } from "@buape/carbon";
+import { Command, type CommandInteraction } from "@buape/carbon"
 
 export default class MosListCommand extends Command {
-	name = "mos-list";
-	description = "List the current availible roles.";
+	name = "mos-list"
+	description = "List the current availible roles."
 
 	async run(interaction: CommandInteraction) {
 		await interaction.reply(`
-***MOS Availability is subject to change due to unit needs; Message CPT | J. Vu (Septonic) or SSG | A. Falcon (Atomic) about openings.***
+***MOS Availability is subject to change due to unit needs; Message CPT | J. Vu (Septonic) or MSG | A. Falcon (Atomic) about openings.***
 
 ### Operator MOS:
 
@@ -26,6 +26,6 @@ export default class MosListCommand extends Command {
 - Crew Chief | 15T
 - Door Gunner | 15T or 11B
 - Pilot | 15A (Commissioned Officer) or 153A (Warrant Officer)
-- UAV Operator | 15W`);
+- UAV Operator | 15W`)
 	}
 }
