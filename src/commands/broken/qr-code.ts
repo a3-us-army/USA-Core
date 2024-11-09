@@ -3,11 +3,24 @@
 import {
 	ApplicationCommandOptionType,
 	Command,
-	CommandOptions,
-	type CommandInteraction
+	type CommandOptions,
+	type CommandInteraction,
+	Embed
 } from "@buape/carbon"
 
 import { shortio } from "src/lib/short-io.js"
+
+let mainEmbed: Embed
+
+class MainEmbed extends Embed {
+	constructor(image: string) {
+		super({})
+		this.description = "eee"
+		this.title = "eeeee"
+		this.color = 0x454b1b
+		this.image = image
+	}
+}
 
 export default class QrCodeCommand extends Command {
 	name = "qr-code"
@@ -30,7 +43,7 @@ export default class QrCodeCommand extends Command {
 			name: "color",
 			type: ApplicationCommandOptionType.String,
 			description: "Main Color, defaults to black. (Optional)",
-			required: true
+			required: false
 		}
 	]
 
@@ -41,10 +54,14 @@ export default class QrCodeCommand extends Command {
 
 		const qrCode = await shortio.link.generateQRCode(id, {
 			backgroundColor: bgColor,
-			color: color
-		})
+			color: color,
+			type: "svg"
+		}) 
+		
 		const final = JSON.stringify(qrCode)
 
-		await interaction.reply({ content: final })
+		mainEmbed = new MainEmbed(final)
+
+		await interaction.reply({ embeds: [mainEmbed] })
 	}
 }

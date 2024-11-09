@@ -33,8 +33,11 @@ export default class ListLinksCommand extends Command {
 		const linkList = jsonObject.links
 			.map(
 				(t: {
+					// biome-ignore lint/suspicious/noExplicitAny: <Works fine>
 					idString: any
+					// biome-ignore lint/suspicious/noExplicitAny: <Works fine>
 					shortURL: any
+					// biome-ignore lint/suspicious/noExplicitAny: <Works fine>
 					originalURL: any
 				}) =>
 					`**Short Link:** ${t.shortURL}\n**Target:** ${t.originalURL}\n**ID:** \`${t.idString}\``

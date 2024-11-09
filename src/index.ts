@@ -11,7 +11,6 @@ import HelpCommand from "./commands/useful/help.js"
 import InfoCommand from "./commands/useful/info.js"
 import LinkAdminCommand from "./commands/useful/link-admin.js"
 import ListLinksCommand from "./commands/useful/links-list.js"
-import QrCodeCommand from "./commands/useful/qr-code.js"
 
 // =================== Tag Commands ===================================
 
@@ -51,8 +50,6 @@ const handle = createHandle((env) => {
 			new InfoCommand(),
 			new LinkAdminCommand(),
 			new ListLinksCommand(),
-			new QrCodeCommand(),
-
 			// =================== Tag Commands ===================================
 
 			new SocialsCommand(),
