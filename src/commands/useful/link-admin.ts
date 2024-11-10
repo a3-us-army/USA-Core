@@ -73,7 +73,8 @@ class CreateLinkCommand extends Command {
 		) {
 			if (guildId === "993993868712349716") {
 				const link = await shortio.link.create(domain, url, {
-					path: path
+					path: path,
+					title: path
 				})
 
 				const jsonString = JSON.stringify(link)
