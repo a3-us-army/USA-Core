@@ -14,6 +14,7 @@ import {
 
 import titanSquadRaw from "src/storage-files/rosters/titan-squad.json"
 import soarRaw from "src/storage-files/rosters/160th-soar.json"
+import ghostRaw from "src/storage-files/rosters/ghost-squad.json"
 
 const titanSquadList = titanSquadRaw
 	.map((s) => `Titan-${s.number} - <@${s.userID}> - **${s.rank}** ${s.emoji}`)
@@ -21,6 +22,10 @@ const titanSquadList = titanSquadRaw
 
 const soar = soarRaw
 	.map((s) => `<@${s.userID}> - **${s.rank}** ${s.emoji} - **${s.callSign}**`)
+	.join("\n")
+
+const ghostSquadList = ghostRaw
+	.map((s) => `Ghost-${s.number} - <@${s.userID}> - **${s.rank}** ${s.emoji}`)
 	.join("\n")
 
 let mainEmbed = null
@@ -67,6 +72,8 @@ export default class RosterCommand extends Command {
 			mainEmbed = new RosterEmbed(
 				"The Current Rosters",
 				`**Titan Squad** - The tip of the spear, the ground team.
+
+				**Ghost Squad** - 2nd squad of main force.
                 
                 **160th Soar Detachment** - The handle of the spear, the aviation team.`,
 				"https://i.imgur.com/SpA37FZ.png"
@@ -89,6 +96,11 @@ class CategorySelectMenu extends StringSelectMenu {
 			description: "T-Squad is the tip of the Spear"
 		},
 		{
+			label: "Ghost Squad",
+			value: "ghostSquad",
+			description: "2nd squad of main force."
+		},
+		{
 			label: "160th Soar Detachment",
 			value: "160thSoar",
 			description: "Special Avation Unit, the handle"
@@ -101,6 +113,13 @@ class CategorySelectMenu extends StringSelectMenu {
 			mainEmbed = new RosterEmbed(
 				"Titan Squad",
 				titanSquadList,
+				"https://i.imgur.com/wpAerkz.png"
+			)
+			await interaction.update({ embeds: [mainEmbed] })
+		} else if (userInput === "ghostSquad") {
+			mainEmbed = new RosterEmbed(
+				"Ghost Squad",
+				ghostSquadList,
 				"https://i.imgur.com/wpAerkz.png"
 			)
 			await interaction.update({ embeds: [mainEmbed] })
