@@ -15,6 +15,7 @@ import {
 import titanSquadRaw from "src/storage-files/rosters/titan-squad.json"
 import soarRaw from "src/storage-files/rosters/160th-soar.json"
 import ghostRaw from "src/storage-files/rosters/ghost-squad.json"
+import zeusRaw from "src/storage-files/rosters/zeus-team.json"
 
 const titanSquadList = titanSquadRaw
 	.map((s) => `Titan-${s.number} - <@${s.userID}> - **${s.rank}** ${s.emoji}`)
@@ -26,6 +27,10 @@ const soar = soarRaw
 
 const ghostSquadList = ghostRaw
 	.map((s) => `Ghost-${s.number} - <@${s.userID}> - **${s.rank}** ${s.emoji}`)
+	.join("\n")
+
+const zeusList = zeusRaw
+	.map((s) => `<@${s.userID}> - ${s.role} - **${s.rank}** ${s.emoji}`)
 	.join("\n")
 
 let mainEmbed = null
@@ -52,7 +57,27 @@ export default class RosterCommand extends Command {
 			mainEmbed = new RosterEmbed(
 				"Titan Squad",
 				titanSquadList,
-				"https://i.imgur.com/wpAerkz.png"
+				"https://i.imgur.com/GVoT6Oc.png"
+			)
+			await interaction.reply({
+				embeds: [mainEmbed],
+				components: [new Row([new RefreshButton()])]
+			})
+		} else if (channelId === "1306430244215062548") {
+			mainEmbed = new RosterEmbed(
+				"Ghost Squad",
+				ghostSquadList,
+				"https://i.imgur.com/lxDghp1.png"
+			)
+			await interaction.reply({
+				embeds: [mainEmbed],
+				components: [new Row([new RefreshButton()])]
+			})
+		} else if (channelId === "1304971552273465364") {
+			mainEmbed = new RosterEmbed(
+				"Zeus Crew",
+				zeusList,
+				"https://i.imgur.com/tBmhZUx.png"
 			)
 			await interaction.reply({
 				embeds: [mainEmbed],
@@ -75,7 +100,9 @@ export default class RosterCommand extends Command {
 
 				**Ghost Squad** - 2nd squad of main force.
                 
-                **160th Soar Detachment** - The handle of the spear, the aviation team.`,
+                **160th Soar Detachment** - The handle of the spear, the aviation team.
+				
+				**Zeus Crew** - Our Zeus Crew is dedicated to providing an immersive, fun, and semi-realistic experience`,
 				"https://i.imgur.com/SpA37FZ.png"
 			)
 			await interaction.reply({
@@ -104,6 +131,12 @@ class CategorySelectMenu extends StringSelectMenu {
 			label: "160th Soar Detachment",
 			value: "160thSoar",
 			description: "Special Avation Unit, the handle"
+		},
+		{
+			label: "Zeus Crew",
+			value: "zeusTeam",
+			description:
+				"Our Zeus Crew is dedicated to providing an immersive and fun experience"
 		}
 	]
 	async run(interaction: StringSelectMenuInteraction) {
@@ -113,14 +146,21 @@ class CategorySelectMenu extends StringSelectMenu {
 			mainEmbed = new RosterEmbed(
 				"Titan Squad",
 				titanSquadList,
-				"https://i.imgur.com/wpAerkz.png"
+				"https://i.imgur.com/GVoT6Oc.png"
+			)
+			await interaction.update({ embeds: [mainEmbed] })
+		} else if (userInput === "zeusTeam") {
+			mainEmbed = new RosterEmbed(
+				"Zeus Crew",
+				zeusList,
+				"https://i.imgur.com/tBmhZUx.png"
 			)
 			await interaction.update({ embeds: [mainEmbed] })
 		} else if (userInput === "ghostSquad") {
 			mainEmbed = new RosterEmbed(
 				"Ghost Squad",
 				ghostSquadList,
-				"https://i.imgur.com/wpAerkz.png"
+				"https://i.imgur.com/lxDghp1.png"
 			)
 			await interaction.update({ embeds: [mainEmbed] })
 		} else if (userInput === "160thSoar") {
@@ -145,9 +185,29 @@ class RefreshButton extends Button {
 			mainEmbed = new RosterEmbed(
 				"Titan Squad",
 				titanSquadList,
-				"https://i.imgur.com/wpAerkz.png"
+				"https://i.imgur.com/GVoT6Oc.png"
 			)
 			await interaction.update({
+				embeds: [mainEmbed],
+				components: [new Row([new RefreshButton()])]
+			})
+		} else if (channelId === "1304971552273465364") {
+			mainEmbed = new RosterEmbed(
+				"Zeus Crew",
+				zeusList,
+				"https://i.imgur.com/tBmhZUx.png"
+			)
+			await interaction.reply({
+				embeds: [mainEmbed],
+				components: [new Row([new RefreshButton()])]
+			})
+		} else if (channelId === "1306430244215062548") {
+			mainEmbed = new RosterEmbed(
+				"Ghost Squad",
+				ghostSquadList,
+				"https://i.imgur.com/lxDghp1.png"
+			)
+			await interaction.reply({
 				embeds: [mainEmbed],
 				components: [new Row([new RefreshButton()])]
 			})

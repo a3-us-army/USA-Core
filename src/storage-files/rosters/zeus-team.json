@@ -1,0 +1,30 @@
+[
+	{
+		"name": "Vu",
+		"userID": "396891399116554240",
+		"rank": "CPT",
+		"emoji": "<:O3_Captain:1300297042731732994>",
+		"role": "Advisory Zeus"
+	},
+	{
+		"name": "Falcon ",
+		"userID": "588752803602890793",
+		"rank": "MSG",
+		"emoji": "<:E8_Master_Sergeant:1300296804293672981>",
+		"role": "Head Zeus2"
+	},
+	{
+		"name": "Father",
+		"userID": "1077006908222869534",
+		"rank": "PVT",
+		"emoji": "<:E2_Private:1300296489053982821>",
+		"role": "Probationary Zeus"
+	},
+	{
+		"name": "Ramrod",
+		"userID": "1098303126253088888",
+		"rank": "CPL",
+		"emoji": "<:E4_Corporal:1300296662731853907>",
+		"role": "Probationary Zeus/Reserve Zeus"
+	}
+]
