@@ -14,7 +14,7 @@ export default class ServerInfoCommand extends Command {
 **Server Port:** 26985
 **Server Password:** CAGUSSOF
 
-**Teamspeak IP:** eaa2672.4netplayers.com
+**Teamspeak IP:** brown-gorilla-81187.zap.cloud
 **Password:** CAGUSSOF
 
 # Useful Links:
@@ -22,7 +22,7 @@ export default class ServerInfoCommand extends Command {
 **ArmA-3 Unit:** https://units.arma3.com/unit/uscag
 **Certifications and Roster:** https://trello.com/b/OGWWKvaU/certifications-and-player-info
 **Teamspeak Download:** https://files.teamspeak-services.com/releases/client/3.6.2/TeamSpeak3-Client-win64-3.6.2.exe
-**TFAR Plugin:** https://cag.xanderxx.xyz/cdn/task_force_radio.ts3_plugin
+**TFAR Plugin:** https://cag-ussof.org/cdn/task_force_radio.ts3_plugin
 
 # Radio Frequencies:
 
