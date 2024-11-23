@@ -35,38 +35,31 @@
 		"number": "5"
 	},
 	{
-		"name": "Aeon",
-		"userID": "1235231010640236547",
-		"rank": "PFC",
-		"emoji": "<:E3_Private_First_Class:1300296524152049694>",
-		"number": "6"
-	},
-	{
 		"name": "James",
 		"userID": "749796665258541166",
 		"rank": "PFC",
 		"emoji": "<:E3_Private_First_Class:1300296524152049694>",
-		"number": "7"
+		"number": "6"
 	},
 	{
 		"name": "Void",
 		"userID": "1173063973206249522",
 		"rank": "PFC",
 		"emoji": "<:E3_Private_First_Class:1300296524152049694>",
-		"number": "8"
+		"number": "7"
 	},
 	{
 		"name": "Luci",
 		"userID": "1242249121616629791",
 		"rank": "PFC",
 		"emoji": "<:E3_Private_First_Class:1300296524152049694>",
-		"number": "9"
+		"number": "8"
 	},
 	{
 		"name": "Gunny",
 		"userID": "444687049597911050",
 		"rank": "PVT",
 		"emoji": "<:E2_Private:1300296489053982821>",
-		"number": "10"
+		"number": "9"
 	}
 ]

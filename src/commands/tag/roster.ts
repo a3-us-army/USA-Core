@@ -197,7 +197,7 @@ class RefreshButton extends Button {
 				zeusList,
 				"https://i.imgur.com/tBmhZUx.png"
 			)
-			await interaction.reply({
+			await interaction.update({
 				embeds: [mainEmbed],
 				components: [new Row([new RefreshButton()])]
 			})
@@ -207,7 +207,7 @@ class RefreshButton extends Button {
 				ghostSquadList,
 				"https://i.imgur.com/lxDghp1.png"
 			)
-			await interaction.reply({
+			await interaction.update({
 				embeds: [mainEmbed],
 				components: [new Row([new RefreshButton()])]
 			})
