@@ -2,7 +2,9 @@
 
 import { Command, Embed, type CommandInteraction } from "@buape/carbon"
 
-import { shortio } from "src/lib/short-io.js"
+import { Shortio } from "@short.io/client-node"
+
+import { Env } from "src/index.js"
 
 const domainId = 1224713
 
@@ -25,7 +27,15 @@ export default class ListLinksCommand extends Command {
 	description = "List all of the shortened links."
 	defer = true
 
+	private env: Env
+	constructor(env: Env) {
+		super()
+		this.env = env
+	}
+
 	async run(interaction: CommandInteraction) {
+		const shortio = new Shortio(this.env.SHORT_IO_API_KEY)
+
 		const result = await shortio.link.list(domainId)
 		const jsonString = JSON.stringify(result)
 		const jsonObject = JSON.parse(jsonString)

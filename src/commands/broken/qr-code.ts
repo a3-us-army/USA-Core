@@ -8,7 +8,9 @@ import {
 	Embed
 } from "@buape/carbon"
 
-import { shortio } from "src/lib/short-io.js"
+import { Shortio } from "@short.io/client-node"
+
+import { Env } from "src/index.js"
 
 let mainEmbed: Embed
 
@@ -47,21 +49,31 @@ export default class QrCodeCommand extends Command {
 		}
 	]
 
+	env: Env
+	constructor(env: Env) {
+		super()
+		this.env = env
+	}
+
 	async run(interaction: CommandInteraction) {
 		const id = interaction.options.getString("id", true)
 		const bgColor = interaction.options.getString("bg-color", false)
 		const color = interaction.options.getString("color", false)
 
+		const shortio = new Shortio(this.env.SHORT_IO_API_KEY)
+
 		const qrCode = await shortio.link.generateQRCode(id, {
 			backgroundColor: bgColor,
 			color: color,
-			type: "svg"
-		}) 
-		
+			type: "png"
+		})
+
+		const randomNum = Math.floor(Math.random() * 1297214971209471) + 1
+
 		const final = JSON.stringify(qrCode)
 
 		mainEmbed = new MainEmbed(final)
 
-		await interaction.reply({ embeds: [mainEmbed] })
+		await interaction.reply({ content: "This shit is broken" })
 	}
 }

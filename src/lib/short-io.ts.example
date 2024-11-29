@@ -1,5 +1,0 @@
-import { Shortio } from "@short.io/client-node"
-
-export const api_Key = "{TOKEN}"
-
-export const shortio = new Shortio(api_Key)

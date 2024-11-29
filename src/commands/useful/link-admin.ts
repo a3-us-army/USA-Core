@@ -7,7 +7,9 @@ import {
 	Embed
 } from "@buape/carbon"
 
-import { shortio } from "src/lib/short-io.js"
+import { Shortio } from "@short.io/client-node"
+
+import { Env } from "src/index.js"
 
 const domain = "go.cag-ussof.org"
 
@@ -33,7 +35,27 @@ class ErrorEmbed extends Embed {
 	}
 }
 
-class CreateLinkCommand extends Command {
+export default class LinkAdminCommand extends CommandWithSubcommands {
+	name = "link-admin"
+	description = "Do many things with dub.co Link!"
+	defer = true
+
+	subcommands: Command[]
+
+	private env: Env
+
+	constructor(env: Env) {
+		super()
+		this.env = env
+		this.subcommands = [
+			new Create(env),
+			new Update(env),
+			new Delete(env)
+		]
+	}
+}
+
+class Create extends Command {
 	name = "create"
 	description = "Create a new shortened link!"
 	defer = true
@@ -54,10 +76,18 @@ class CreateLinkCommand extends Command {
 		}
 	]
 
+	env: Env
+	constructor(env: Env) {
+		super()
+		this.env = env
+	}
+
 	async run(interaction: CommandInteraction) {
 		const guildId = interaction.guild?.id
 
 		const userId = interaction.user?.id
+
+		const shortio = new Shortio(this.env.SHORT_IO_API_KEY)
 
 		const url = interaction.options.getString("url", true)
 		const path = interaction.options.getString("path", true)
@@ -107,7 +137,7 @@ class CreateLinkCommand extends Command {
 	}
 }
 
-class DeleteinkCommand extends Command {
+class Delete extends Command {
 	name = "delete"
 	description = "Delete a short link"
 	defer = true
@@ -121,10 +151,18 @@ class DeleteinkCommand extends Command {
 		}
 	]
 
+	env: Env
+	constructor(env: Env) {
+		super()
+		this.env = env
+	}
+
 	async run(interaction: CommandInteraction) {
 		const userId = interaction.user?.id
 
 		const id = interaction.options.getString("id", true)
+
+		const shortio = new Shortio(this.env.SHORT_IO_API_KEY)
 
 		errorEmbed = new ErrorEmbed(
 			"You do not have permission to use this.",
@@ -149,7 +187,7 @@ class DeleteinkCommand extends Command {
 	}
 }
 
-class UpdateLinkCommand extends Command {
+class Update extends Command {
 	name = "update"
 	description = "Update a command."
 	defer = true
@@ -175,9 +213,17 @@ class UpdateLinkCommand extends Command {
 		}
 	]
 
+	env: Env
+	constructor(env: Env) {
+		super()
+		this.env = env
+	}
+
 	async run(interaction: CommandInteraction) {
 		const userId = interaction.user?.id
 		const guildId = interaction.guild?.id
+
+		const shortio = new Shortio(this.env.SHORT_IO_API_KEY)
 
 		const id = interaction.options.getString("id", true)
 		const newUrl = interaction.options.getString("url", true)
@@ -226,16 +272,4 @@ class UpdateLinkCommand extends Command {
 			await interaction.reply({ embeds: [errorEmbed] })
 		}
 	}
-}
-
-export default class LinkAdminCommand extends CommandWithSubcommands {
-	name = "link-admin"
-	description = "Do many things with dub.co Link!"
-	defer = true
-
-	subcommands = [
-		new CreateLinkCommand(),
-		new UpdateLinkCommand(),
-		new DeleteinkCommand()
-	]
 }

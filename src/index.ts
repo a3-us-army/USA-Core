@@ -32,6 +32,14 @@ import RateCommand from "./commands/fun/rate.js"
 
 import TestingCommand from "./commands/testing/testing.js"
 
+export type Env = {
+	DISCORD_CLIENT_ID: string
+	DISCORD_PUBLIC_KEY: string
+	DISCORD_BOT_TOKEN: string
+	DEPLOY_SECRET: string
+	SHORT_IO_API_KEY: string
+}
+
 const handle = createHandle((env) => {
 	const client = new Client(
 		{
@@ -48,8 +56,9 @@ const handle = createHandle((env) => {
 			new PingCommand(),
 			new HelpCommand(),
 			new InfoCommand(),
-			new LinkAdminCommand(),
-			new ListLinksCommand(),
+			new LinkAdminCommand(env as unknown as Env),
+			new ListLinksCommand(env as unknown as Env),
+
 			// =================== Tag Commands ===================================
 
 			new SocialsCommand(),
