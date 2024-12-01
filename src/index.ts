@@ -28,10 +28,6 @@ import RosterCommand from "./commands/tag/roster.js"
 import NukeCommand from "./commands/fun/nuke.js"
 import RateCommand from "./commands/fun/rate.js"
 
-// =================== Test Stuff ===================================
-
-import TestingCommand from "./commands/testing/testing.js"
-
 export type Env = {
 	DISCORD_CLIENT_ID: string
 	DISCORD_PUBLIC_KEY: string
@@ -73,11 +69,7 @@ const handle = createHandle((env) => {
 			// =================== Fun Commands ===================================
 
 			new NukeCommand(),
-			new RateCommand(),
-
-			// =================== Test Stuff ===================================
-
-			new TestingCommand()
+			new RateCommand()
 		]
 	)
 	return [client]
