@@ -9,7 +9,6 @@ import UpdateModpackCommand from "./commands/useful/update-modpack.js"
 import PingCommand from "./commands/useful/ping.js"
 import HelpCommand from "./commands/useful/help.js"
 import InfoCommand from "./commands/useful/info.js"
-import LinkAdminCommand from "./commands/useful/link-admin.js"
 import ListLinksCommand from "./commands/useful/links-list.js"
 
 // =================== Tag Commands ===================================
@@ -52,7 +51,6 @@ const handle = createHandle((env) => {
 			new PingCommand(),
 			new HelpCommand(),
 			new InfoCommand(),
-			new LinkAdminCommand(env as unknown as Env),
 			new ListLinksCommand(env as unknown as Env),
 
 			// =================== Tag Commands ===================================
