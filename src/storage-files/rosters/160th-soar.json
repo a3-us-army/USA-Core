@@ -14,6 +14,13 @@
 		"callSign": "Narco"
 	},
 	{
+		"name": "Laz",
+		"userID": "891502308804931655",
+		"rank": "SFC - Reservist",
+		"emoji": "<:E7_Sergeant_First_Class:1300296771674570774>",
+		"callSign": "{AWAITING}"
+	},
+	{
 		"name": "Fletcher",
 		"userID": "1145376173954707517",
 		"rank": "PFC",
