@@ -4,30 +4,33 @@ import { Command, Embed, type CommandInteraction } from "@buape/carbon"
 
 class MainEmbed extends Embed {
 	title = "MOS List"
-	description =
-		"***MOS Availability is subject to change due to unit needs; Message <@396891399116554240> or <@588752803602890793> about openings.***"
-	fields = [
-		{
-			name: "Operator MOS:",
-			value: `- Combat Engineer | 12B
-- Demolitions Expert | 18C
-- Sniper/Marksman | 18B
-- Combat Medic | 18D
-- Grenadier | 11B
-- Rifleman | 11B
-- Machine Gunner | 18B
-- Joint Terminal Attack Controller (JTAC) | 13F`,
-			inline: true
-		},
-		{
-			name: "160th Detachment MOS",
-			value: `- Crew Chief | 15T
-- Door Gunner | 15T or 11B
-- Pilot | 15A (Commissioned Officer) or 153A (Warrant Officer)
-- UAV Operator | 15W`,
-			inline: true
-		}
-	]
+	description = `***MOS Availability is subject to change due to unit needs; Message <@396891399116554240> or <@588752803602890793> about openings.***
+		
+		- 18x - starting MOS for Ground Forces
+
+- 18A - Special Forces Operations Officer
+- 18Z - Special Forces Operations Sergeant
+
+- 18B - Weapons Specialist
+  - Marksman
+  - Auto Rifleman
+  - Machine Gunner
+  - Breacher
+  - Grenadier
+  - m136 Launcher/AT-4
+- 18C - Engineer Specialist
+  - Demolitions Expert
+  - Combat Engineer
+  - Unmanned Ground Systems Operator (Ground Drones)
+- 18D - Medical Specialist
+  - Pararescue
+  - Combat Medic
+- 18E - Communications Specialist
+  - JTAC Certification
+  - Radio Telephone Operator Certification
+- 153A - Rotary Wing Aviator
+  - Rotary-Wing Pilot Certification
+  - Unmanned Aerial Vehicle Certification`
 }
 
 export default class MosListCommand extends Command {
