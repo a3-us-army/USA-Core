@@ -10,7 +10,7 @@ export default class RecruitmentMessageCommand extends Command {
 		await interaction.reply(`
 # USSOF Combat Applications Group
 Arma-3 Semi-Milsim Unit
-https://discord.gg/QMYsPnHVJG 
+https://discord.gg/8srzuP97Rb 
 
 <<-------------------------------------------------------->>
 
