@@ -11,6 +11,35 @@ This bot was made as a utility bot for [The CAG USSOF ArmA-3 Unit.](https://disc
 - The useful commands are stuff that is actually, yk, useful.
 - Fun commands do stuff like nuke people.
 
+1. Clone the repo
+```bash
+git clone https://github.com/cag-ussof/CAG-Operating-System
+```
+
+2. Download the dependencies
+```bash
+npm install
+```
+
+3. Deploy the bot
+```bash
+npm run deploy
+```
+4. Add your vars to the bot. (Base URL = your worker link, eg. https://main-bot.xanderxx.workers.dev)
+```bash
+npx wrangler secret put DEPLOY_SECRET
+npx wrangler secret put DISCORD_CLIENT_ID
+npx wrangler secret put DISCORD_PUBLIC_KEY
+npx wrangler secret put DISCORD_BOT_TOKEN
+npx wrangler secret put BASE_URL
+npx wrangler secret put DISCORD_CLIENT_SECRET
+```
+5. Deploy the bot again
+```bash
+npm run deploy
+```
+6. Finally, deploy your commands. Go to https://{BASE_URL}/deploy?secret={DEPLOY_SECRET}
+
 ## More:
 
 <details>
