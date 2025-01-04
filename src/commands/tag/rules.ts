@@ -1,10 +1,10 @@
 // =================== Imports ===================================
 
-import { Command, type CommandInteraction } from "@buape/carbon";
+import { Command, type CommandInteraction } from "@buape/carbon"
 
 export default class RulesCommand extends Command {
-	name = "rules";
-	description = "The CAG Discord server rules";
+	name = "rules"
+	description = "The US Army Discord server rules"
 
 	async run(interaction: CommandInteraction) {
 		await interaction.reply(`
@@ -23,6 +23,6 @@ export default class RulesCommand extends Command {
 
 <:number_7:1299937329724657725> No Impersonation: Do not impersonate other members, moderators, or admins.
 
-<:number_8:1299937359508279386> Have Fun: Enjoy the server and help maintain a positive and welcoming community!`);
+<:number_8:1299937359508279386> Have Fun: Enjoy the server and help maintain a positive and welcoming community!`)
 	}
 }
