@@ -9,7 +9,7 @@ export default class SocialsCommand extends Command {
 	async run(interaction: CommandInteraction) {
 		await interaction.reply(`
 # <:youtube:1299933061965680722> Youtube: 
-N/A
+https://www.youtube.com/@A3USARMY
 
 # <:tiktok:1299933083113357362> TikTok: 
 https://www.tiktok.com/@usarmy.a3
