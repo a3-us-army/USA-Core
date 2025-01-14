@@ -7,57 +7,27 @@ export default class RecruitmentMessageCommand extends Command {
 	description = "The recruitment message."
 
 	async run(interaction: CommandInteraction) {
-		await interaction.reply("N/A")
-		//`
-		// # USSOF Combat Applications Group
-		// Arma-3 Semi-Milsim Unit
-		// https://discord.gg/8srzuP97Rb
+		await interaction.reply(`**📢 Join [USA] United States Army Today!**
 
-		// <<-------------------------------------------------------->>
+Are you looking for a **semi-milsim Arma 3 unit** that values teamwork, tactical gameplay, and most importantly, having fun? Look no further!  
 
-		// ## Details:
-		// - 16+ Preferred
-		// - Semi-MILSIM
-		// - Special Forces | Small Team Tactics
-		// - Microphone Required
+**Who We Are:**
+We’re a United States Armed Forces-inspired unit that strikes the perfect balance between realism and relaxation. Whether you're a seasoned Arma veteran or new to the game, we welcome players of all skill levels.  
 
-		// *We're a semi-milsim unit primarily focused on special operations and small team tactics. We like to keep things structured, but we always prioritize keeping things fun while being organized. Our missions are designed to challenge teamwork and precision, but we also understand that real life comes first. Attendance isn't strict; however, if our numbers drop too low, we’ll usually reach out to check in with members who are E-3+ and keep everyone in the loop. We are a closely knitted community and we love tactical realism. Our goal is to create an enjoyable and immersive experience for all.*
+**What We Offer:**
+- Immersive, team-oriented missions  
+- A relaxed and friendly atmosphere—no over-the-top punishments or stress  
+- Flexible scheduling that respects real-life commitments  
+- Regular operations: **Tuesdays and Wednesdays at 7 PM EST (<t:1736380800:t> your time)**, with a posted schedule to keep things organized  
 
-		// ## Operation Times:
-		// - 7:00 PM EST on Tuesday and Wednesday | Your time: <t:1733356800:t>
-		// - note: we host random events outside the schedule throughout the week.
+**Why Join Us?**
+we know gaming is about unwinding and having a great time with friends. You’ll experience realistic gameplay without the unnecessary pressure of strict milsim units.  
 
-		// ## List of MOS:
-		// ***MOS Availability is subject to change due to unit needs; Message the Recruiter about openings.***
+**Rosters**
+https://cag-ussof.org/roster/rangers/
+https://cag-ussof.org/roster/1st-infantry/
 
-		// - 18x - starting MOS for Ground Forces
-
-		// - 18A - Special Forces Operations Officer
-		// - 18Z - Special Forces Operations Sergeant
-
-		// - 18B - Weapons Specialist
-		//   - Marksman
-		//   - Auto Rifleman
-		//   - Machine Gunner
-		//   - Breacher
-		//   - Grenadier
-		//   - m136 Launcher/AT-4
-		// - 18C - Engineer Specialist
-		//   - Demolitions Expert
-		//   - Combat Engineer
-		//   - Unmanned Ground Systems Operator (Ground Drones)
-		// - 18D - Medical Specialist
-		//   - Pararescue
-		//   - Combat Medic
-		// - 18E - Communications Specialist
-		//   - JTAC Certification
-		//   - Radio Telephone Operator Certification
-		// - 153A - Rotary Wing Aviator
-		//   - Rotary-Wing Pilot Certification
-		//   - Unmanned Aerial Vehicle Certification
-
-		// [image-1](https://i.imgur.com/Tl3WhtH.png)
-		// [image-2](https://i.imgur.com/LjwUiUZ.png)
-		// [image-3](https://i.imgur.com/djijSKh.png)`)
+**MEPS Invitation**
+https://discord.gg/3mMayQqfd7`)
 	}
 }
