@@ -20,11 +20,6 @@
 		"description": "The CAG social media accounts."
 	},
 	{
-		"name": "mos-list",
-		"id": "1299904884602048603",
-		"description": "The MOS listings."
-	},
-	{
 		"name": "recruitment-message",
 		"id": "1299907655778828308",
 		"description": "The recruitment message. "

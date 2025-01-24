@@ -20,14 +20,14 @@ class InfoEmbed extends Embed {
 			inline: true
 		},
 		{
-			name: "About CAG Operating System",
-			value: "This bot is a multipurpose bot to help do some stuff in CAG. It has multiple category of commands such as tag commands, useful commands, and even some fun commands. The tag commands are so we can easily paste different things, such as the MOS list as well as server info. It lets us DM people with the server info without having to go copy and pasting so much. It also allows to keep track of who has updated their modpack.",
+			name: "About USA Core",
+			value: "This bot is a multipurpose bot to help do some stuff in the US Army. It has multiple category of commands such as tag commands, useful commands, and even some fun commands. The tag commands are so we can easily paste different things, such as the MOS list as well as server info. It lets us DM people with the server info without having to go copy and pasting so much. It also allows to keep track of who has updated their modpack.",
 			inline: true
 		}
 	]
 	thumbnail = "https://i.imgur.com/LjwUiUZ.png"
 	author = {
-		name: "CAG Operating System",
+		name: "USA Core",
 		icon_url: "https://i.imgur.com/LjwUiUZ.png"
 	}
 }

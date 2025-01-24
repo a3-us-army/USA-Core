@@ -12,20 +12,12 @@ import {
 	type StringSelectMenuInteraction
 } from "@buape/carbon"
 
-import unitCommand from "src/storage-files/staff/unit-command.json"
-import prTeam from "src/storage-files/staff/pr-team.json"
-import mosTeamLeads from "src/storage-files/staff/mos-team-leads.json"
-
-const unitCommandList = unitCommand
-	.map((s) => `<@${s.userID}> - ${s.position} ${s.emoji} - ${s.boardRank}`)
-	.join("\n")
+import prTeam from "src/storage-files/staff/pr-team.json" assert {
+	type: "json"
+}
 
 const prTeamList = prTeam
 	.map((s) => `<@${s.userID}> - ${s.access} - ${s.position}`)
-	.join("\n")
-
-const mosTeamLeadList = mosTeamLeads
-	.map((s) => `<@${s.userID}> - **${s.position} Lead**`)
 	.join("\n")
 
 let mainEmbed = null
@@ -58,24 +50,12 @@ export default class StaffListCommand extends Command {
 				embeds: [mainEmbed],
 				components: [new Row([new RefreshStaffTeamButton()])]
 			})
-		} else if (channelId === "1301669785960054864") {
-			mainEmbed = new StaffListEmbed(
-				"MOS Team Leads",
-				mosTeamLeadList,
-				"https://i.imgur.com/sceCyzd.png"
-			)
-			await interaction.reply({
-				embeds: [mainEmbed],
-				components: [new Row([new RefreshStaffTeamButton()])]
-			})
 		} else {
 			mainEmbed = new StaffListEmbed(
 				"Staff Listings",
 				`**Unit Command** - The leaders that make up this unit.
 			
-				**PR Team** - The people who help with recruitment and run the socials.
-			
-				**MOS Team Leaders** - The professionals in a certian MOS who help train and lead people in the same field`,
+				**PR Team** - The people who help with recruitment and run the socials.`,
 				"https://i.imgur.com/VV8XFKY.png"
 			)
 			await interaction.reply({
@@ -100,12 +80,6 @@ class CategorySelectMenu extends StringSelectMenu {
 			value: "prTeam",
 			description:
 				"The people who help with recruitment and run the socials"
-		},
-		{
-			label: "MOS Team Leaders",
-			value: "mosTeamLeads",
-			description:
-				"The professionals in a certian MOS who help train and lead people in the same field"
 		}
 	]
 	async run(interaction: StringSelectMenuInteraction) {
@@ -114,7 +88,7 @@ class CategorySelectMenu extends StringSelectMenu {
 		if (userInput === "unitCommand") {
 			mainEmbed = new StaffListEmbed(
 				"Unit Command",
-				unitCommandList,
+				"https://cag-ussof.org/C&S",
 				"https://i.imgur.com/T0Fh3x8.png"
 			)
 			await interaction.update({ embeds: [mainEmbed] })
@@ -123,13 +97,6 @@ class CategorySelectMenu extends StringSelectMenu {
 				"PR Team",
 				prTeamList,
 				"https://i.imgur.com/RMciiVL.png"
-			)
-			await interaction.update({ embeds: [mainEmbed] })
-		} else if (userInput === "mosTeamLeads") {
-			mainEmbed = new StaffListEmbed(
-				"MOS Team Leaders",
-				mosTeamLeadList,
-				"https://i.imgur.com/sceCyzd.png"
 			)
 			await interaction.update({ embeds: [mainEmbed] })
 		}
@@ -148,16 +115,6 @@ class RefreshStaffTeamButton extends Button {
 				"PR Team",
 				prTeamList,
 				"https://i.imgur.com/RMciiVL.png"
-			)
-			await interaction.update({
-				embeds: [mainEmbed],
-				components: [new Row([new RefreshStaffTeamButton()])]
-			})
-		} else if (channelId === "1301669785960054864") {
-			mainEmbed = new StaffListEmbed(
-				"MOS Team Leads",
-				mosTeamLeadList,
-				"https://i.imgur.com/sceCyzd.png"
 			)
 			await interaction.update({
 				embeds: [mainEmbed],

@@ -10,17 +10,17 @@ class MainEmbed extends Embed {
 			value: `**Server IP:**
 US-SCEPTER-CAG.factions.ws
 **Server Port:** 26985
-**Server Password:** CAGUSSOF
+**Server Password:** USAUSA
 
 **Teamspeak IP:**
 brown-gorilla-81187.zap.cloud
-**Password:** CAGUSSOF`,
+**Password:** USAUSA`,
 			inline: true
 		},
 		{
 			name: "Useful Links:",
 			value: `**[ArmA-3 Unit](https://go.cag-ussof.org/unit)**
-**[Certifications and Roster](https://go.cag-ussof.org/trello)**
+**[Database](https://go.cag-ussof.org/database)**
 **[Teamspeak Download](https://go.cag-ussof.org/ts-download)**
 **[TFAR Plugin](https://cag-ussof.org/cdn/task_force_radio.ts3_plugin)**`,
 			inline: true

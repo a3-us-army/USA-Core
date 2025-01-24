@@ -24,8 +24,8 @@ We’re a United States Armed Forces-inspired unit that strikes the perfect bala
 we know gaming is about unwinding and having a great time with friends. You’ll experience realistic gameplay without the unnecessary pressure of strict milsim units.  
 
 **Rosters**
-https://cag-ussof.org/roster/rangers/
-https://cag-ussof.org/roster/1st-infantry/
+https://go.cag-ussof.org/rangers
+https://go.cag-ussof.org/1st-combat
 
 **MEPS Invitation**
 https://discord.gg/3mMayQqfd7`)
