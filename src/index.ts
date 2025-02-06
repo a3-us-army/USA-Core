@@ -9,6 +9,7 @@ import UpdateModpackCommand from "./commands/useful/update-modpack.js"
 import PingCommand from "./commands/useful/ping.js"
 import HelpCommand from "./commands/useful/help.js"
 import InfoCommand from "./commands/useful/info.js"
+import HourlyXP from "./commands/useful/hourly-xp.js"
 
 // =================== Tag Commands ===================================
 
@@ -31,6 +32,7 @@ export type Env = {
 	DISCORD_PUBLIC_KEY: string
 	DISCORD_BOT_TOKEN: string
 	DEPLOY_SECRET: string
+	KIAI_API_KEY: string
 }
 
 const handle = createHandle((env) => {
@@ -49,6 +51,7 @@ const handle = createHandle((env) => {
 			new PingCommand(),
 			new HelpCommand(),
 			new InfoCommand(),
+			new HourlyXP(env as unknown as Env),
 
 			// =================== Tag Commands ===================================
 
