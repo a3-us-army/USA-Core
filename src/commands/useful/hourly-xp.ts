@@ -73,7 +73,8 @@ class Request extends Command {
 
 		await interaction.reply({
 			content: "<@&1291542630777360444>",
-			embeds: [embed]
+			embeds: [embed],
+			allowedMentions: { roles: ["1291542630777360444"] }
 		})
 	}
 }
@@ -131,7 +132,7 @@ class Accept extends Command {
 			)
 
 			const embed = new AcceptEmbed(
-				`You have accepted <@${user.id}>'s request for **${hours}** hours, gaining them **${xp}** XP. (pls work api)`
+				`You have accepted <@${user.id}>'s request for **${hours}** hours, gaining them **${xp}** XP.`
 			)
 			await interaction.reply({
 				content: `<@${user.id}>`,
