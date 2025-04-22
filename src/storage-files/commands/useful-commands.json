@@ -10,11 +10,6 @@
 		"description": "Bot replies with 'Pong'"
 	},
 	{
-		"name": "update-modpack",
-		"id": "1297543586346434673",
-		"description": "Keep track of whoever has updated their modpack."
-	},
-	{
 		"name": "info",
 		"id": "1300989111171158106",
 		"description": "Information on this bot."

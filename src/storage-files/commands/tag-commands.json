@@ -1,10 +1,5 @@
 [
 	{
-		"name": "rules",
-		"id": "1298803025602936895",
-		"description": "Send the CAG Discord server rules."
-	},
-	{
 		"name": "event-times",
 		"id": "1298828407660085279",
 		"description": "The current op times."
@@ -28,10 +23,5 @@
 		"name": "staff-list",
 		"id": "1300227059959988266",
 		"description": "List the people who help make this unit what it is."
-	},
-	{
-		"name": "roster",
-		"id": "1301716873552990238",
-		"description": "The current squad rosters."
 	}
 ]
